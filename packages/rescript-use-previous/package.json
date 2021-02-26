@@ -1,0 +1,27 @@
+{
+  "name": "@seamonster-studios/rescript-use-previous",
+  "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/prod/packages/rescript-use-previous",
+  "version": "0.0.1",
+  "author": "SeaMonster Studios Engineering",
+  "scripts": {
+    "build": "bsb -make-world",
+    "clean": "bsb -clean-world",
+    "dev": "bsb -make-world -w"
+  },
+  "keywords": [
+    "rescript",
+    "react-hooks"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@rescript/react": "^0.10.1",
+    "bs-platform": "*"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
