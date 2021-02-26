@@ -53,7 +53,3 @@ Within on of the ./packages, run `yarn add <pkgName>` like normal, then run `ler
 ## Documenting your package
 
 > WIP
-
-## Thanks
-
-@TheSpyder for the inspiration from (reason_monorepo)[https://github.com/TheSpyder/reason_monorepo]

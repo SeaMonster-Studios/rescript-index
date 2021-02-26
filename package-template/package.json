@@ -1,0 +1,21 @@
+{
+  "name": "@seamonster-studios/rescript-[PKG_NAME]",
+  "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/prod/packages/rescript-[PKG_NAME]",
+  "version": "0.0.1",
+  "author": "SeaMonster Studios Engineering",
+  "scripts": {
+    "build": "bsb -make-world",
+    "clean": "bsb -clean-world",
+    "dev": "bsb -make-world -w"
+  },
+  "keywords": [
+    "rescript"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "bs-platform": "*"
+  }
+}
