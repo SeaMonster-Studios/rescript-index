@@ -6,6 +6,10 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "bootstrap": "./node_modules/.bin/lerna bootstrap",
+    "deploy": "./node_modules/.bin/lerna publish"
+  },
   "main": "index.js",
   "license": "MIT",
   "keywords": [
