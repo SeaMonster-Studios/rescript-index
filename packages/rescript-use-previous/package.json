@@ -1,6 +1,7 @@
 {
   "name": "@seamonster-studios/rescript-use-previous",
   "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/prod/packages/rescript-use-previous",
+  "main": "UsePrevious.js",
   "version": "0.0.1",
   "author": "SeaMonster Studios Engineering",
   "scripts": {
@@ -18,10 +19,13 @@
   },
   "devDependencies": {
     "@rescript/react": "^0.10.1",
-    "bs-platform": "*"
+    "bs-platform": "^9.0.1"
   },
   "peerDependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
+  },
+  "dependencies": {
+    "@rescript/std": "^9.0.1"
   }
 }

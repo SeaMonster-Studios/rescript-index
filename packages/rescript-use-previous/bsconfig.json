@@ -7,15 +7,16 @@
     "subdirs": true
   },
   "package-specs": {
-    "module": "commonjs",
+    "module": "es6",
     "in-source": true
   },
-  "suffix": ".bs.js",
+  "suffix": ".js",
   "bs-dependencies": [
     "@rescript/react"
   ],
   "namespace": false,
   "warnings": {
     "error": "+101"
-  }
+  },
+  "external-stdlib": "@rescript/std"
 }
