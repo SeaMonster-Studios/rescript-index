@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/rescript-lang/rescript-compiler/master/docs/docson/build-schema.json",
   "name": "@seamonster-studios/rescript-use-previous",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "sources": {
     "dir": "./",
     "subdirs": true
