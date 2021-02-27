@@ -13,7 +13,7 @@
     "module": "es6",
     "in-source": true
   },
-  "suffix": ".js",
+  "suffix": ".bs.js",
   "bs-dependencies": [
     "@rescript/react"
   ],
