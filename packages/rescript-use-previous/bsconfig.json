@@ -3,7 +3,7 @@
   "name": "@seamonster-studios/rescript-use-previous",
   "version": "0.0.1",
   "sources": {
-    "dir": "./",
+    "dir": "src",
     "subdirs": true
   },
   "reason": {
