@@ -15,14 +15,13 @@ A monorepo that contains bindings and reusable components across projects
 ## Table of Contents
 
 0. [Roadmap](#Roadmap)
-1. [Installation](#Installation)
-2. [Build & Local Development](#Build)
-3. [Publishing](#Publishing)
-4. [Adding a new package](#Adding-a-new-package)
-5. [Documenting your package](#Documenting-your-package)
-6. [Adding dependencies to a package](#Adding-dependencies-to-a-package)
-7. [Setting up the Package to be used within a JavaScript Project](#Setting-up-the-Package-to-be-used-within-a-JavaScript-Project)
-8. [Using Packages in this Repo within a JavaScript Project](#Using-Packages-in-this-Repo-within-a-JavaScript-Project)
+0. [Installation](#Installation)
+0. [Developing and Publishing Packages](#Developing-and-Publishing-Packages)
+0. [Creating a new package](#Creating-a-new-package)
+0. [Documenting your package](#Documenting-your-package)
+0. [Adding dependencies to a package](#Adding-dependencies-to-a-package)
+0. [Setting up the Package to be used within a JavaScript Project](#Setting-up-the-Package-to-be-used-within-a-JavaScript-Project)
+0. [Using Packages in this Repo within a JavaScript Project](#Using-Packages-in-this-Repo-within-a-JavaScript-Project)
 
 ## Installation
 
@@ -30,18 +29,19 @@ A monorepo that contains bindings and reusable components across projects
 npm i -g lerna && yarn
 ```
 
-## Build
+## Developing and Publishing Packages
 
-- Build: `yarn build`
-- Clean: `yarn clean`
+Run the following scripts within the directory of the package you are developing;
+
 - Build & watch: `yarn dev`
+- Clean: `yarn clean`
+- Build: `yarn build`
+- Publishing:
 
-## Publishing
+  1. Sign into npm in your terminal with `npm login`
+  2. Run `yarn deploy` and make version bump selection.
 
-1. Sign into npm in your terminal, npm login
-2. Run lerna publish and make version bump selection.
-
-## Adding a new package
+## Creating a new package
 
 1. Duplicate one of the existing component packages
 2. Update the `name` field in __package.json__ and __bsconfig.json__ (they need to match). The package name should always be prepended with `@seamonster-studios/rescript-`
