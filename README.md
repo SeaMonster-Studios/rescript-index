@@ -14,6 +14,7 @@ A monorepo that contains bindings and reusable components across projects
 
 ## Table of Contents
 
+0. [Roadmap](#Roadmap)
 1. [Installation](#Installation)
 2. [Build & Local Development](#Build)
 3. [Publishing](#Publishing)
@@ -104,3 +105,9 @@ Keep in mind that because of how React components are compiled within ReScript y
   Learn React
 </Counter.make>
 ```
+
+## Roadmap
+
+- Setup React Cosmos for documenting all components and their usage, and use tailwind to style the examples
+- Setup continuous deployment for when PRs are merged into the `prod` branch
+- Add components, hooks, utils that are highly used within SeaMonster Studios Engineering as packages here. Refactor as necessary to fit withing the constraints and guidelines of this repo.
