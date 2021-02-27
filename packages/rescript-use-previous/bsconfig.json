@@ -6,6 +6,9 @@
     "dir": "./",
     "subdirs": true
   },
+  "reason": {
+    "react-jsx": 3
+  },
   "package-specs": {
     "module": "es6",
     "in-source": true

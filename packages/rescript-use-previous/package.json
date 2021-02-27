@@ -21,11 +21,11 @@
     "@rescript/react": "^0.10.1",
     "bs-platform": "^9.0.1"
   },
+  "dependencies": {
+    "@rescript/std": "^9.0.1"
+  },
   "peerDependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
-  },
-  "dependencies": {
-    "@rescript/std": "^9.0.1"
   }
 }
