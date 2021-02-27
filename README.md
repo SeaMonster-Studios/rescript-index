@@ -20,7 +20,8 @@ A monorepo that contains bindings and reusable components across projects
 4. [Adding a new package](#Adding-a-new-package)
 5. [Documenting your package](#Documenting-your-package)
 6. [Adding dependencies to a package](#Adding-dependencies-to-a-package)
-7. [Using Packages in this Repo within a JavaScript Project](#Using-Packages-in-this-Repo-within-a-JavaScript-Project)
+7. [Setting up the Package to be used within a JavaScript Project](#Setting-up-the-Package-to-be-used-within-a-JavaScript-Project)
+8. [Using Packages in this Repo within a JavaScript Project](#Using-Packages-in-this-Repo-within-a-JavaScript-Project)
 
 ## Installation
 
@@ -57,7 +58,7 @@ Within on of the ./packages, run `yarn add <pkgName>` like normal, then run `ler
 
 ## Setting up the Package to be used within a JavaScript Project
 
-1. Within `package.json` make sure that the `main` property is pointing to your compiled root file. 
+Within `package.json` make sure that the `main` property is pointing to your compiled root file. 
 
 ```json
 "main": "src/UsePrevious.js",
