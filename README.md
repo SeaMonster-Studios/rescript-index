@@ -31,7 +31,7 @@ npm i -g lerna && yarn
 
 ## Developing and Publishing Packages
 
-Run the following scripts within the directory of the package you are developing;
+Run the following scripts within the directory of the package you are developing:
 
 - Build & watch: `yarn dev`
 - Clean: `yarn clean`
