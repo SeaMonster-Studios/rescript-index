@@ -20,6 +20,7 @@ A monorepo that contains bindings and reusable components across projects
 4. [Adding a new package](#Adding-a-new-package)
 5. [Documenting your package](#Documenting-your-package)
 6. [Adding dependencies to a package](#Adding-dependencies-to-a-package)
+7. [Using Packages in this Repo within a JavaScript Project](#Using-Packages-in-this-Repo-within-a-JavaScript-Project)
 
 ## Installation
 
@@ -53,3 +54,52 @@ Within on of the ./packages, run `yarn add <pkgName>` like normal, then run `ler
 ## Documenting your package
 
 > WIP
+
+## Setting up the Package to be used within a JavaScript Project
+
+1. Within `package.json` make sure that the `main` property is pointing to your compiled root file. 
+
+```json
+"main": "src/UsePrevious.js",
+```
+
+In general packages in this repo should be minimal and so you wouldn't need to export things from more than the root file. However, if you find the need to do so you can simply create variables within your `.res` root file pointing to any other file. That variable would then get exported and be available within the compiled root `.js` file.
+
+```rescript
+// UsePrevious.res
+
+let someFancyUtility = AFakeFile.someFancyThing
+```
+
+## Using Packages in this Repo within a JavaScript Project
+
+1. Install the package
+
+> yarn add @seamonster-studios/rescript-use-previous
+
+2. Import the package in a `.js` file
+
+```javascript
+import { usePrevious, Counter } from "@seamonster-studios/rescript-use-previous"
+```
+
+3. Use the imported module
+```javascript
+let [state, setState] = React.useState(() => 0)
+let prevState = usePrevious(state)
+
+React.useEffect(() => {
+  setInterval(() => {
+    setState(s => s += 1)
+  }, 2000)
+
+}, [])
+```
+
+Keep in mind that because of how React components are compiled within ReScript you cannot use `Counter` (or any React component) directly as it's actually an object. Use components like so:
+
+```javascript
+<Counter.make>
+  Learn React
+</Counter.make>
+```
