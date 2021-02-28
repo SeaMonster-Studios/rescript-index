@@ -16,8 +16,8 @@ A monorepo that contains bindings and reusable components across projects
 
 0. [Roadmap](#Roadmap)
 0. [Installation](#Installation)
-0. [Developing and Publishing Packages](#Developing-and-Publishing-Packages)
 0. [Creating a new package](#Creating-a-new-package)
+0. [Developing and Publishing Packages](#Developing-and-Publishing-Packages)
 0. [Documenting your package](#Documenting-your-package)
 0. [Adding dependencies to a package](#Adding-dependencies-to-a-package)
 0. [Setting up the Package to be used within a JavaScript Project](#Setting-up-the-Package-to-be-used-within-a-JavaScript-Project)
@@ -28,6 +28,22 @@ A monorepo that contains bindings and reusable components across projects
 ```sh
 npm i -g lerna && yarn
 ```
+
+## Creating a new package
+
+Run the `make` script providing the name of the package in snake case.
+
+Example:
+
+```
+yarn make use-previous
+```
+
+This will generate the following files with everything configured for publishing and usage within this monorepo:
+- bsconfig.json
+- package.json
+- README.md
+- [ROOT_FILE].res
 
 ## Developing and Publishing Packages
 
@@ -40,14 +56,6 @@ Run the following scripts within the directory of the package you are developing
 
   1. Sign into npm in your terminal with `npm login`
   2. Run `yarn deploy` and make version bump selection.
-
-## Creating a new package
-
-1. Duplicate one of the existing component packages
-2. Update the `name` field in __package.json__ and __bsconfig.json__ (they need to match). The package name should always be prepended with `@seamonster-studios/rescript-`
-3. Update the `repository` field in package.json to point to the new package's directory within the repo
-4. Develop your new package
-5. Follow the steps in [the publishing updates section](#Publishing)
 
 ## Adding dependencies to a package
 

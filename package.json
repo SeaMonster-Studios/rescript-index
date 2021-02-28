@@ -7,6 +7,7 @@
     "packages/*"
   ],
   "scripts": {
+    "make": "node ./bin/make-package",
     "bootstrap": "./node_modules/.bin/lerna bootstrap",
     "deploy": "./node_modules/.bin/lerna publish"
   },
@@ -16,6 +17,9 @@
     "rescript"
   ],
   "devDependencies": {
+    "change-case": "^4.1.2",
+    "fs-extra": "^9.1.0",
     "lerna": "^3.22.1"
-  }
+  },
+  "dependencies": {}
 }
