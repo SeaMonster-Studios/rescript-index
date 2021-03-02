@@ -1,16 +1,17 @@
 const fs = require('fs-extra');
 const changeCase = require('change-case')
+const { exec } = require('child_process');
 
 const args = process.argv.slice(2)
 
 if (args.length > 0) {
   make()
 } else {
-  logError("You must provide the name of the package. Example:\n\n\tyarn make use-previous")
+  log("You must provide the name of the package. Example:\n\n\tyarn make use-previous")
 }
 
-function logError(message) {
-  console.error(`\n${message}\n`)
+function log(message) {
+  console.log(`\n${message}\n`)
 }
 
 async function replaceTokens(dir, pkgName, rootName, files) {
@@ -33,7 +34,7 @@ async function make() {
 
   try {
     await fs.readdir(newDir)
-    logError("This package already exits. Please select a different name.")
+    log("This package already exits. Please select a different name.")
   } catch (_) {
 
     await fs.copy(`${__dirname}/package-template`, newDir)
@@ -43,5 +44,18 @@ async function make() {
     await replaceTokens(newDir, pkgName, rootName, files)
 
     await fs.writeFile(`${newDir}/${rootName}.res`, "")
+
+    process.chdir(newDir);
+
+    log("Installing dependencies...")
+
+    exec("yarn", (err, stdout, stderr) => {
+      if (err) {
+        console.error(err)
+      } else {
+        console.log(stdout);
+        console.log(stderr);
+      }
+    });
   }
 }

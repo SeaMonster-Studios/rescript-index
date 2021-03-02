@@ -39,7 +39,7 @@ Example:
 yarn make use-previous
 ```
 
-This will generate the following files with everything configured for publishing and usage within this monorepo:
+This will install dependencies and generate the following files with everything configured for publishing and usage within this monorepo:
 - bsconfig.json
 - package.json
 - README.md
