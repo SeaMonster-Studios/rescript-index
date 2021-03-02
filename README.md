@@ -8,7 +8,7 @@ A monorepo that contains bindings and reusable components across projects
 
 - __Cut the Styles__. You should never include any style libraries or CSS-in-JS libraries in this repo. Design your components with a "headless" architecture in mind, setting them up as only hooks where possible. This will make them more reusable across projects anyway. It will also reduce the amount of dependencies required and prevent style overriding.
 
-- __Code Reviews are Necessary__. Make sure your code is always reviewed by another engineer before publishing. This should happen through a formal PR process.
+- __Code Reviews are Necessary__. Make sure your code is always reviewed by another engineer before deploying. This should happen through a formal PR process.
 
 - __Be Kind to JS__. One goal of open-sourcing ReScript code at SeaMonster Studios is to help other developers to see ReScript in action and how it can provide a better DX and more usable/maintainable software. As such, be sure that each package you add (bindings aside), compiles to and can be utilized by JavaScript developers.
 
@@ -17,9 +17,10 @@ A monorepo that contains bindings and reusable components across projects
 0. [Roadmap](#Roadmap)
 0. [Installation](#Installation)
 0. [Creating a new package](#Creating-a-new-package)
-0. [Developing and Publishing Packages](#Developing-and-Publishing-Packages)
+0. [Developing and Deploying Packages](#Developing-and-Deploying-Packages)
 0. [Documenting your package](#Documenting-your-package)
 0. [Adding dependencies to a package](#Adding-dependencies-to-a-package)
+0. [Adding other ReScript Index packages to a package](Adding-other-ReScript-Index-packages-to-a-package)
 0. [Setting up the Package to be used within a JavaScript Project](#Setting-up-the-Package-to-be-used-within-a-JavaScript-Project)
 0. [Using Packages in this Repo within a JavaScript Project](#Using-Packages-in-this-Repo-within-a-JavaScript-Project)
 
@@ -39,20 +40,20 @@ Example:
 yarn make use-previous
 ```
 
-This will install dependencies and generate the following files with everything configured for publishing and usage within this monorepo:
+This will install dependencies and generate the following files with everything configured for deploying and usage within this monorepo:
 - bsconfig.json
 - package.json
 - README.md
 - [ROOT_FILE].res
 
-## Developing and Publishing Packages
+## Developing and Deploying Packages
 
 Run the following scripts within the directory of the package you are developing:
 
 - Build & watch: `yarn dev`
 - Clean: `yarn clean`
 - Build: `yarn build`
-- Publishing:
+- Deploying:
 
   1. Sign into npm in your terminal with `npm login`
   2. Run `yarn deploy` and make version bump selection.
@@ -60,6 +61,10 @@ Run the following scripts within the directory of the package you are developing
 ## Adding dependencies to a package
 
 Within on of the ./packages, run `yarn add <pkgName>` like normal, then run `lerna bootstrap`
+
+## Adding other ReScript Index packages to a package
+
+1. Make sure both packages are deployed
 
 ## Documenting your package
 
