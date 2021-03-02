@@ -49,7 +49,7 @@ async function make() {
 
     log("Installing dependencies...")
 
-    exec("yarn", (err, stdout, stderr) => {
+    exec("yarn && yarn build", (err, stdout, stderr) => {
       if (err) {
         console.error(err)
       } else {
