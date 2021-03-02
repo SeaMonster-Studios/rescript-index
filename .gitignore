@@ -6,3 +6,4 @@ packages/**/lib/
 packages/**/node_modules/
 lib
 node_modules
+yarn-error.log

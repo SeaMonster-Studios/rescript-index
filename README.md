@@ -67,7 +67,7 @@ Within on of the ./packages, run `yarn add <pkgName>` like normal, then run `ler
 
 ## Setting up the Package to be used within a JavaScript Project
 
-Within `package.json` make sure that the `main` property is pointing to your compiled root file. 
+Within `package.json` make sure that the `main` property is pointing to your compiled root file. This is already done for you when you use the `make` script.
 
 ```json
 "main": "src/UsePrevious.bs.js",
