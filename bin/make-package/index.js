@@ -30,7 +30,7 @@ async function replaceTokens(dir, pkgName, rootName, files) {
 async function make() {
   let pkgName = args[0]
   let rootName = changeCase.capitalCase(pkgName).replace(/\s/g, "")
-  let newDir = `${__dirname}/../../packages/rescript-${pkgName}`
+  let newDir = `${__dirname}/../../packages/${pkgName}`
 
   try {
     await fs.readdir(newDir)
