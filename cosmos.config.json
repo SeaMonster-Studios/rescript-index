@@ -1,0 +1,9 @@
+{
+  "staticPath": "public",
+  "userDepsFilePath": "src/cosmos.userdeps.js",
+  "experimentalRendererUrl": "http://localhost:8080/_renderer.html",
+  "fixtureFileSuffix": "fixture.bs",
+  "watchDirs": [
+    "packages"
+  ]
+}

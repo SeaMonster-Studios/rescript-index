@@ -8,6 +8,12 @@
   ],
   "scripts": {
     "make": "node ./bin/make-package",
+    "docs": "cosmos",
+    "dev:snowpack": "snowpack dev",
+    "build:snowpack": "snowpack build",
+    "build:cosmos": "cosmos-export",
+    "serve:docs": "npx serve cosmos-export",
+    "build:docs": "run-s build:snowpack build:cosmos serve:docs",
     "bootstrap": "./node_modules/.bin/lerna bootstrap",
     "deploy": "./node_modules/.bin/lerna publish"
   },
@@ -17,9 +23,16 @@
     "rescript"
   ],
   "devDependencies": {
+    "@snowpack/plugin-react-refresh": "^2.4.0",
     "change-case": "^4.1.2",
     "fs-extra": "^9.1.0",
-    "lerna": "^3.22.1"
+    "lerna": "^3.22.1",
+    "npm-run-all": "^4.1.5",
+    "react": "^17.0.1",
+    "react-cosmos": "^5.6.0",
+    "react-dom": "^17.0.1",
+    "serve": "^11.3.2",
+    "snowpack": "^3.0.13"
   },
   "dependencies": {}
 }

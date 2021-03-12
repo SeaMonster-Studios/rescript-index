@@ -7,3 +7,5 @@ packages/**/node_modules/
 lib
 node_modules
 yarn-error.log
+/build
+cosmos.userdeps.js
