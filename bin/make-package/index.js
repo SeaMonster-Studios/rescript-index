@@ -23,7 +23,11 @@ async function replaceTokens(dir, pkgName, rootName, files) {
       .replace(rePkg, pkgName)
       .replace(reRoot, rootName)
 
-    await fs.writeFile(`${dir}/${fileName}`, file)
+    try {
+      await fs.writeFile(`${dir}/${fileName}`, file)
+    } catch (error) {
+      console.log(error)
+    }
   }))
 }
 
@@ -37,31 +41,41 @@ async function make() {
     log("This package already exits. Please select a different name.")
   } catch (_) {
 
-    await fs.copy(`${__dirname}/package-template`, newDir)
+    try {
+      await fs.copy(`${__dirname}/package-template`, newDir)
 
-    let files = await fs.readdir(newDir)
+      let files = await fs.readdir(newDir)
 
-    await replaceTokens(newDir, pkgName, rootName, files)
+      await replaceTokens(newDir, pkgName, rootName, files)
 
-    await fs.writeFile(`${newDir}/${rootName}.res`, "")
+      fs.mkdir(`${newDir}/src`, async function (err) {
+        if (err) {
+          return console.log(error)
+        }
 
-    await fs.writeFile(`${newDir}/_${rootName}.fixture.res`, `
-    let default = () => {
-      React.null
-    }
-    `)
-
-    process.chdir(newDir);
-
-    log("Installing dependencies...")
-
-    exec("yarn && yarn build", (err, stdout, stderr) => {
-      if (err) {
-        console.error(err)
-      } else {
-        console.log(stdout);
-        console.log(stderr);
+        await fs.writeFile(`${newDir}/src/${rootName}.res`, "")
+        await fs.writeFile(`${newDir}/src/_${rootName}.fixture.res`, `
+      let default = () => {
+        React.null
       }
-    });
+      `)
+
+        process.chdir(newDir);
+
+        log("Installing dependencies...")
+
+        exec("yarn && yarn build", (err, stdout, stderr) => {
+          if (err) {
+            console.error(err)
+          } else {
+            console.log(stdout);
+            console.log(stderr);
+          }
+        });
+      })
+
+    } catch (error) {
+      console.log(error)
+    }
   }
 }
