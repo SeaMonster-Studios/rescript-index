@@ -7,9 +7,8 @@ module.exports = {
   plugins: ['@snowpack/plugin-react-refresh', '@snowpack/plugin-babel'],
   routes: [
     // Cosmos renderer iframe URL
-    { src: '/_renderer.html', dest: '/index.cosmos.html' },
     /* Enable an SPA Fallback in development: */
-    // {"match": "routes", "src": ".*", "dest": "/index.html"},
+    { "match": "routes", "src": "/_renderer.html", "dest": "/index.cosmos.html" },
   ],
   optimize: {
     /* Example: Bundle your final build: */
@@ -20,6 +19,7 @@ module.exports = {
   },
   devOptions: {
     open: 'none',
+    port: 3001
     /* ... */
   },
   buildOptions: {
