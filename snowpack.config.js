@@ -2,9 +2,9 @@ module.exports = {
   mount: {
     // directory name: 'build directory'
     public: '/',
-    src: '/dist',
+    packages: '/dist',
   },
-  plugins: ['@snowpack/plugin-react-refresh'],
+  plugins: ['@snowpack/plugin-react-refresh', '@snowpack/plugin-babel'],
   routes: [
     // Cosmos renderer iframe URL
     { src: '/_renderer.html', dest: '/index.cosmos.html' },

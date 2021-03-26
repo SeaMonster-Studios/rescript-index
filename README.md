@@ -75,7 +75,7 @@ Within on of the ./packages, run `yarn add <pkgName>` like normal, then run `ler
 Within `package.json` make sure that the `main` property is pointing to your compiled root file. This is already done for you when you use the `make` script.
 
 ```json
-"main": "src/UsePrevious.bs.js",
+"main": "src/UsePrevious.js",
 ```
 
 In general packages in this repo should be minimal and so you wouldn't need to export things from more than the root file. However, if you find the need to do so you can simply create variables within your `.res` root file pointing to any other file. That variable would then get exported and be available within the compiled root `.js` file.

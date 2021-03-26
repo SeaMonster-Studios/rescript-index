@@ -2,7 +2,7 @@
 
 import * as Curry from "@rescript/std/lib/es6/curry.js";
 import * as React from "react";
-import * as UsePrevious from "./UsePrevious.bs.js";
+import * as UsePrevious from "./UsePrevious.js";
 
 function $$default(param) {
   var match = React.useState(function () {
