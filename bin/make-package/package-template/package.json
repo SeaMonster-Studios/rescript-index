@@ -1,7 +1,7 @@
 {
   "name": "@seamonster-studios/rescript-PKG_NAME",
   "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/prod/packages/rescript-PKG_NAME",
-  "main": "src/ROOT_NAME.js",
+  "main": "src/ROOT_FILE_NAME.js",
   "version": "0.0.0",
   "author": "SeaMonster Studios Engineering",
   "scripts": {

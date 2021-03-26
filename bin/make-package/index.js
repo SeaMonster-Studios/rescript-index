@@ -16,7 +16,7 @@ function log(message) {
 
 async function replaceTokens(dir, pkgName, rootName, files) {
   let rePkg = new RegExp("PKG_NAME", "g");
-  let reRoot = new RegExp("ROOT_NAME", "g");
+  let reRoot = new RegExp("ROOT_FILE_NAME", "g");
 
   await Promise.all(files.map(async (fileName) => {
     let file = (await fs.readFile(`${dir}/${fileName}`, "utf8"))
@@ -44,6 +44,12 @@ async function make() {
     await replaceTokens(newDir, pkgName, rootName, files)
 
     await fs.writeFile(`${newDir}/${rootName}.res`, "")
+
+    await fs.writeFile(`${newDir}/_${rootName}.fixture.res`, `
+    let default = () => {
+      React.null
+    }
+    `)
 
     process.chdir(newDir);
 

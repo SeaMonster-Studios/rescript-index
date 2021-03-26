@@ -1,4 +1,4 @@
-# ROOT_NAME
+# ROOT_FILE_NAME
 
 Install
 
