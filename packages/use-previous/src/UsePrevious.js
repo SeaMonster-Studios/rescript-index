@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-function usePrevious(value) {
+function use(value) {
   var reference = React.useRef(value);
   React.useEffect((function () {
           reference.current = value;
@@ -14,7 +14,7 @@ function usePrevious(value) {
 }
 
 export {
-  usePrevious ,
+  use ,
   
 }
 /* react Not a pure module */

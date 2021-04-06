@@ -1,7 +1,7 @@
 let default = () => {
   let (value, setValue) = React.useState(() => 0)
 
-  let previousValue = UsePrevious.usePrevious(value)
+  let previousValue = UsePrevious.use(value)
 
   React.useEffect0(() => {
     Js.Global.setInterval(() => {

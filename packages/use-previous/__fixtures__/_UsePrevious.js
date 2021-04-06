@@ -10,7 +10,7 @@ function $$default(param) {
       });
   var setValue = match[1];
   var value = match[0];
-  var previousValue = UsePrevious.usePrevious(value);
+  var previousValue = UsePrevious.use(value);
   React.useEffect((function () {
           setInterval((function (param) {
                   return Curry._1(setValue, (function (prev) {
