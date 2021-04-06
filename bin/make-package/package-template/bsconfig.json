@@ -2,10 +2,16 @@
   "$schema": "https://raw.githubusercontent.com/rescript-lang/rescript-compiler/master/docs/docson/build-schema.json",
   "name": "@seamonster-studios/rescript-PKG_NAME",
   "version": "0.0.1",
-  "sources": {
-    "dir": "src",
-    "subdirs": true
-  },
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    },
+    {
+      "dir": "__fixtures__",
+      "subdirs": true
+    }
+  ],
   "reason": {
     "react-jsx": 3
   },

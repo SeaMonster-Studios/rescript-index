@@ -2,7 +2,7 @@
 
 import * as Curry from "@rescript/std/lib/es6/curry.js";
 import * as React from "react";
-import * as UsePrevious from "./UsePrevious.js";
+import * as UsePrevious from "../src/UsePrevious.js";
 
 function $$default(param) {
   var match = React.useState(function () {
@@ -20,7 +20,7 @@ function $$default(param) {
           
         }), []);
   return React.createElement("div", {
-              className: "p-6"
+              className: "p-0"
             }, React.createElement("div", undefined, "Previous Value: ", String(previousValue)), React.createElement("div", undefined, "Value: ", String(value)));
 }
 

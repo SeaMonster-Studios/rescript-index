@@ -53,27 +53,32 @@ async function make() {
           return console.log(error)
         }
 
-        await fs.writeFile(`${newDir}/src/${rootName}.res`, "")
-        await fs.writeFile(`${newDir}/src/_${rootName}.fixture.res`, `
+        fs.mkdir(`${newDir}/__fixtures__`, async function (err) {
+          if (err) {
+            return console.log(error)
+          }
+
+          await fs.writeFile(`${newDir}/src/${rootName}.res`, "")
+          await fs.writeFile(`${newDir}/__fixtures__/_${rootName}.res`, `
       let default = () => {
         React.null
       }
       `)
 
-        process.chdir(newDir);
+          process.chdir(newDir);
 
-        log("Installing dependencies...")
+          log("Installing dependencies...")
 
-        exec("yarn && yarn build", (err, stdout, stderr) => {
-          if (err) {
-            console.error(err)
-          } else {
-            console.log(stdout);
-            console.log(stderr);
-          }
-        });
+          exec("yarn && yarn build", (err, stdout, stderr) => {
+            if (err) {
+              console.error(err)
+            } else {
+              console.log(stdout);
+              console.log(stderr);
+            }
+          });
+        })
       })
-
     } catch (error) {
       console.log(error)
     }

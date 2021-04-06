@@ -10,7 +10,7 @@ let default = () => {
     None
   })
 
-  <div className="p-6">
+  <div className="p-0">
     <div> {"Previous Value: "->React.string} {previousValue->string_of_int->React.string} </div>
     <div> {"Value: "->React.string} {value->string_of_int->React.string} </div>
   </div>
