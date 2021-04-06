@@ -1,18 +1,13 @@
+import "./index.css"
 import React from "react"
 import * as ReactDOM from "react-dom"
-import { use as useCountdown } from "./use-countdown/src/UseCountdown.js"
-import "./use-countdown/src/UseCountdown.js"
-import "./use-previous/src/UsePrevious.js"
-
-console.log("anything?")
 
 const App = () => {
-  let count = useCountdown(10, () => console.log("ended"))
   return <div className="App">
     <header className="App-header">
       <p>
-        Page has been open for <code>{count.time}</code> seconds.
-        </p>
+        This is not the page you're looking for. Make sure that you're running both snowpack (which shows this root) as well as cosmos which both proxies this root and provides the URL you should be viewing.
+      </p>
     </header>
   </div>
 }

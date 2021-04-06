@@ -19,9 +19,9 @@ function $$default(param) {
                 }), 1000);
           
         }), []);
-  return React.createElement(UsePrevious.Counter.make, {
-              children: null
-            }, React.createElement("span", undefined, "Previous Value: ", String(previousValue)), React.createElement("span", undefined, "Value: ", String(value)));
+  return React.createElement("div", {
+              className: "p-6"
+            }, React.createElement("div", undefined, "Previous Value: ", String(previousValue)), React.createElement("div", undefined, "Value: ", String(value)));
 }
 
 export {

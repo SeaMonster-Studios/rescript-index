@@ -4,7 +4,7 @@ module.exports = {
     public: '/',
     packages: '/dist',
   },
-  plugins: ['@snowpack/plugin-react-refresh', '@snowpack/plugin-babel'],
+  plugins: ['@snowpack/plugin-react-refresh', '@snowpack/plugin-babel', '@snowpack/plugin-postcss'],
   routes: [
     // Cosmos renderer iframe URL
     /* Enable an SPA Fallback in development: */

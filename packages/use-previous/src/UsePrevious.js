@@ -35,7 +35,9 @@ function UsePrevious$Counter(Props) {
         interval,
         step
       ]);
-  return React.createElement("div", undefined, React.createElement("div", undefined, String(match[0])), children);
+  return React.createElement("div", {
+              className: "p-0"
+            }, React.createElement("div", undefined, String(match[0])), children);
 }
 
 var Counter = {

@@ -19,6 +19,6 @@ module Counter = {
       None
     }, (interval, step))
 
-    <div> <div> {count->Belt.Int.toString->React.string} </div> children </div>
+    <div className="p-0"> <div> {count->Belt.Int.toString->React.string} </div> children </div>
   }
 }

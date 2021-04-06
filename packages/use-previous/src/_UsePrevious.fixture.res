@@ -10,8 +10,8 @@ let default = () => {
     None
   })
 
-  <UsePrevious.Counter>
-    <span> {"Previous Value: "->React.string} {previousValue->string_of_int->React.string} </span>
-    <span> {"Value: "->React.string} {value->string_of_int->React.string} </span>
-  </UsePrevious.Counter>
+  <div className="p-6">
+    <div> {"Previous Value: "->React.string} {previousValue->string_of_int->React.string} </div>
+    <div> {"Value: "->React.string} {value->string_of_int->React.string} </div>
+  </div>
 }
