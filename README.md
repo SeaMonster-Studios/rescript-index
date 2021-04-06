@@ -118,9 +118,3 @@ Keep in mind that because of how React components are compiled within ReScript y
   Learn React
 </Counter.make>
 ```
-
-## Roadmap
-
-- Test and verify development workflow of when a package in this repo requires another package in this repo. Also test that things work as expected when consuming that package in a project.
-- Setup continuous deployment for when PRs are merged into the `prod` branch
-- Add components, hooks, utils that are highly used within SeaMonster Studios Engineering as packages here. Refactor as necessary to fit withing the constraints and guidelines of this repo.
