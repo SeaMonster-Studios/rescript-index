@@ -58,13 +58,13 @@ let use = (duration, onEnd) => {
   )
 
   React.useEffect2(() => {
-    React.Ref.setCurrent(timerCallback, () => dispatch(Decrement(onEnd)))
+    timerCallback.current = () => dispatch(Decrement(onEnd))
     Some(() => ())
   }, (onEnd, dispatch))
 
   React.useEffect2(() => {
     let tick = () => {
-      let current = React.Ref.current(timerCallback)
+      let current = timerCallback.current
       current()
     }
     switch (duration, state.playState, state.time == 0) {
