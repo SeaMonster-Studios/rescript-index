@@ -25,4 +25,5 @@ module.exports = {
   buildOptions: {
     /* ... */
   },
+  exclude: ["**/lib/**", "**/cosmos.userdeps.js"]
 };

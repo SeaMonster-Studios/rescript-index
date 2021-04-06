@@ -20,7 +20,7 @@ function $$default(param) {
           
         }), []);
   return React.createElement("div", {
-              className: "p-0"
+              className: "p-4"
             }, React.createElement("div", undefined, "Previous Value: ", String(previousValue)), React.createElement("div", undefined, "Value: ", String(value)));
 }
 
