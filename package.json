@@ -14,8 +14,7 @@
     "docs:build:snowpack": "snowpack build",
     "docs:build:cosmos": "cosmos-export",
     "docs:build": "run-p docs:build:snowpack docs:build:cosmos",
-    "serve:docs": "npx serve cosmos-export",
-    "build:docs": "run-s build:snowpack build:cosmos serve:docs",
+    "docs:serve": "npx serve cosmos-export",
     "bootstrap": "./node_modules/.bin/lerna bootstrap",
     "deploy": "./node_modules/.bin/lerna publish"
   },
