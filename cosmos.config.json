@@ -1,7 +1,8 @@
 {
   "staticPath": "public",
   "userDepsFilePath": "packages/cosmos.userdeps.js",
+  "experimentalRendererUrl": "http://localhost:3001/_renderer.html",
   "watchDirs": [
-    "packages"
+    "./packages"
   ]
 }

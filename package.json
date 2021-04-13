@@ -10,14 +10,15 @@
     "make": "node ./bin/make-package",
     "docs:dev:cosmos": "cosmos",
     "docs:dev:snowpack": "snowpack dev",
-    "docs": "run-p docs:dev:snowpack docs:dev:cosmos",
+    "docs": "yarn docs:build:cosmos && run-p docs:dev:snowpack docs:dev:cosmos",
     "docs:build:snowpack": "snowpack build",
     "docs:build:cosmos": "cosmos-export",
     "docs:serve:cosmos": "npx serve cosmos-export",
     "docs:build": "run-s docs:build:snowpack docs:build:cosmos",
     "docs:export": "run-s docs:build:snowpack docs:serve:cosmos",
     "bootstrap": "./node_modules/.bin/lerna bootstrap",
-    "deploy": "./node_modules/.bin/lerna publish"
+    "deploy": "./node_modules/.bin/lerna publish",
+    "clean": "rm -rf ./build ./cosmos-export ./packages/cosmos.userdeps.js"
   },
   "main": "index.js",
   "license": "MIT",
