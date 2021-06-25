@@ -14,7 +14,6 @@ A monorepo that contains bindings and reusable components across projects
 
 ## Table of Contents
 
-0. [Roadmap](#Roadmap)
 0. [Installation](#Installation)
 0. [Creating a new package](#Creating-a-new-package)
 0. [Developing and Deploying Packages](#Developing-and-Deploying-Packages)
