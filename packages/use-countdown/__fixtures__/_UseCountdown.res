@@ -1,3 +1,0 @@
-let default = () => {
-  React.null
-}

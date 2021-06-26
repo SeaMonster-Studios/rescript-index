@@ -1,7 +1,7 @@
 const fs = require("fs-extra");
 const changeCase = require("change-case");
 const { exec } = require("child_process");
-const { log } = require("../utils");
+const { log, logGreen, logRed } = require("../utils");
 
 build();
 
@@ -16,11 +16,12 @@ async function build() {
         `cd ${__dirname}/../../packages/${pkg} && yarn && yarn build`,
         (err, stdout, stderr) => {
           if (err) {
+            logRed(`Finished building ${pkg} with errors...`);
             console.error(err);
           } else {
             console.log(stdout);
             console.log(stderr);
-            log(`Finished building ${pkg}`);
+            logGreen(`Successfully finished building ${pkg}`);
           }
         }
       );
