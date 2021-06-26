@@ -1,5 +1,5 @@
 const { createWebpackDevConfig } = require("@craco/craco");
 const cracoConfig = require("./craco.config.js");
-const webpackConfig = createWebpackDevConfig(cracoConfig);
+const config = createWebpackDevConfig(cracoConfig);
 
-module.exports = webpackConfig;
+module.exports = config;

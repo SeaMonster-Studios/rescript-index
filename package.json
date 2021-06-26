@@ -8,11 +8,9 @@
   ],
   "scripts": {
     "make": "node ./bin/make-package",
-    "docs:dev:cosmos": "cross-env FAST_REFRESH=false cosmos",
-    "docs": "yarn docs:dev:cosmos",
-    "docs:build:cosmos": "cosmos-export",
-    "docs:serve": "npx serve cosmos-export",
-    "docs:build": "run-s docs:build:cosmos",
+    "dev": "cross-env FAST_REFRESH=false cosmos",
+    "build": "FAST_REFRESH=false cosmos-export",
+    "serve": "npx serve cosmos-export",
     "bootstrap": "./node_modules/.bin/lerna bootstrap",
     "deploy": "./node_modules/.bin/lerna publish",
     "clean": "rm -rf ./cosmos-export"

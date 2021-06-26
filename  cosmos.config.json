@@ -1,5 +1,5 @@
 {
   "staticPath": "public",
-  "watchDirs": ["packages", "public", "src"],
-	"globalImports": ["src/index.css"]
+	"globalImports": ["src/index.css"],
+  "watchDirs": ["packages", "src"]
 }
