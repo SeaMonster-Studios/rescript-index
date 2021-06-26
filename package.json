@@ -9,7 +9,9 @@
   "scripts": {
     "make": "node ./bin/make-package",
     "dev": "cross-env FAST_REFRESH=false cosmos",
-    "build": "FAST_REFRESH=false cosmos-export",
+    "build:packages": "node ./bin/build-packages",
+    "build:cosmos": "FAST_REFRESH=false cosmos-export",
+    "build": "run-s build:packages build:cosmos",
     "serve": "npx serve cosmos-export",
     "bootstrap": "./node_modules/.bin/lerna bootstrap",
     "deploy": "./node_modules/.bin/lerna publish",
