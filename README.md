@@ -90,15 +90,12 @@ let someFancyUtility = AFakeFile.someFancyThing
 
 1. Install the package
 
-> yarn add @seamonster-studios/rescript-use-previous
+> yarn add @seamonster-studios/use-previous
 
 2. Import the package in a `.js` file
 
 ```javascript
-import {
-  usePrevious,
-  Counter,
-} from "@seamonster-studios/rescript-use-previous";
+import { usePrevious, Counter } from "@seamonster-studios/use-previous";
 ```
 
 3. Use the imported module

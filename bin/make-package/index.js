@@ -1,7 +1,7 @@
 const fs = require("fs-extra");
 const changeCase = require("change-case");
 const { exec } = require("child_process");
-const { log } = require("../utils");
+const { log, logGreen, logRed } = require("../utils");
 
 const args = process.argv.slice(2);
 
@@ -39,7 +39,9 @@ async function make() {
 
   try {
     await fs.readdir(newDir);
-    log("This package already exits. Please select a different name.");
+    logRed(
+      `A \`${pkgName}\` package already exits. Please select a different name.`
+    );
   } catch (_) {
     try {
       await fs.copy(`${__dirname}/package-template`, newDir);
@@ -62,9 +64,9 @@ async function make() {
           await fs.writeFile(
             `${newDir}/__fixtures__/_${rootName}.res`,
             `
-      let default = () => {
-        React.null
-      }
+let default = () => {
+  React.null
+}
       `
           );
 
@@ -74,16 +76,20 @@ async function make() {
 
           exec("yarn && yarn build", (err, stdout, stderr) => {
             if (err) {
+              logRed(`Failed to create \`${pkgName}\` package...`);
               console.error(err);
             } else {
               console.log(stdout);
               console.log(stderr);
+              logGreen(`Successfully created \`${pkgName}\` package`);
             }
           });
         });
       });
-    } catch (error) {
-      console.log(error);
+    } catch (_error) {
+      logRed(
+        `A \`${pkgName}\` package already exits. Please select a different name.`
+      );
     }
   }
 }

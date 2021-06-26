@@ -2,4 +2,4 @@
 
 Install
 
-`yarn add @seamonster-studios/rescript-use-countdown`
+`yarn add @seamonster-studios/use-countdown`

@@ -2,4 +2,4 @@
 
 Install
 
-`yarn add @seamonster-studios/rescript-PKG_NAME`
+`yarn add @seamonster-studios/PKG_NAME`

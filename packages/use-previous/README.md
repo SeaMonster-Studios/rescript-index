@@ -2,4 +2,4 @@
 
 Install
 
-`yarn add @seamonster-studios/rescript-use-previous`
+`yarn add @seamonster-studios/use-previous`

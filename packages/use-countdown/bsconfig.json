@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/rescript-lang/rescript-compiler/master/docs/docson/build-schema.json",
-  "name": "@seamonster-studios/rescript-use-countdown",
+  "name": "@seamonster-studios/use-countdown",
   "version": "0.0.1",
   "sources": [
     {
