@@ -4,24 +4,24 @@ A monorepo that contains bindings and reusable components across projects
 
 ## Monorepo practices
 
-- __Using PPXs are Discouraged__. If a PPX needs to be used it should be self contained within a package that is not used by other packages in this repo. The reason for this is that each PPX requires internal knowledge on how a given version of ReScript works and can make the upgrade path for projects that depend on them very difficult.
+- **Using PPXs are Discouraged**. If a PPX needs to be used it should be self contained within a package that is not used by other packages in this repo. The reason for this is that each PPX requires internal knowledge on how a given version of ReScript works and can make the upgrade path for projects that depend on them very difficult.
 
-- __Cut the Styles__. You should never include any style libraries or CSS-in-JS libraries in this repo. Design your components with a "headless" architecture in mind, setting them up as only hooks where possible. This will make them more reusable across projects anyway. It will also reduce the amount of dependencies required and prevent style overriding.
+- **Cut the Styles**. You should never include any style libraries or CSS-in-JS libraries in this repo. Design your components with a "headless" architecture in mind, setting them up as only hooks where possible. This will make them more reusable across projects anyway. It will also reduce the amount of dependencies required and prevent style overriding.
 
-- __Code Reviews are Necessary__. Make sure your code is always reviewed by another engineer before deploying. This should happen through a formal PR process.
+- **Code Reviews are Necessary**. Make sure your code is always reviewed by another engineer before deploying. This should happen through a formal PR process.
 
-- __Be Kind to JS__. One goal of open-sourcing ReScript code at SeaMonster Studios is to help other developers to see ReScript in action and how it can provide a better DX and more usable/maintainable software. As such, be sure that each package you add (bindings aside), compiles to and can be utilized by JavaScript developers.
+- **Be Kind to JS**. One goal of open-sourcing ReScript code at SeaMonster Studios is to help other developers to see ReScript in action and how it can provide a better DX and more usable/maintainable software. As such, be sure that each package you add (bindings aside), compiles to and can be utilized by JavaScript developers.
 
 ## Table of Contents
 
-0. [Installation](#Installation)
-0. [Creating a new package](#Creating-a-new-package)
-0. [Developing and Deploying Packages](#Developing-and-Deploying-Packages)
-0. [Documenting your package](#Documenting-your-package)
-0. [Adding dependencies to a package](#Adding-dependencies-to-a-package)
-0. [Adding other ReScript Index packages to a package](Adding-other-ReScript-Index-packages-to-a-package)
-0. [Setting up the Package to be used within a JavaScript Project](#Setting-up-the-Package-to-be-used-within-a-JavaScript-Project)
-0. [Using Packages in this Repo within a JavaScript Project](#Using-Packages-in-this-Repo-within-a-JavaScript-Project)
+1. [Installation](#Installation)
+2. [Creating a new package](#Creating-a-new-package)
+3. [Developing and Deploying Packages](#Developing-and-Deploying-Packages)
+4. [Documenting your package](#Documenting-your-package)
+5. [Adding dependencies to a package](#Adding-dependencies-to-a-package)
+6. [Adding other ReScript Index packages to a package](Adding-other-ReScript-Index-packages-to-a-package)
+7. [Setting up the Package to be used within a JavaScript Project](#Setting-up-the-Package-to-be-used-within-a-JavaScript-Project)
+8. [Using Packages in this Repo within a JavaScript Project](#Using-Packages-in-this-Repo-within-a-JavaScript-Project)
 
 ## Installation
 
@@ -40,6 +40,7 @@ yarn make use-previous
 ```
 
 This will install dependencies and generate the following files with everything configured for deploying and usage within this monorepo:
+
 - bsconfig.json
 - package.json
 - README.md
@@ -94,26 +95,27 @@ let someFancyUtility = AFakeFile.someFancyThing
 2. Import the package in a `.js` file
 
 ```javascript
-import { usePrevious, Counter } from "@seamonster-studios/rescript-use-previous"
+import {
+  usePrevious,
+  Counter,
+} from "@seamonster-studios/rescript-use-previous";
 ```
 
 3. Use the imported module
+
 ```javascript
-let [state, setState] = React.useState(() => 0)
-let prevState = usePrevious(state)
+let [state, setState] = React.useState(() => 0);
+let prevState = usePrevious(state);
 
 React.useEffect(() => {
   setInterval(() => {
-    setState(s => s += 1)
-  }, 2000)
-
-}, [])
+    setState((s) => (s += 1));
+  }, 2000);
+}, []);
 ```
 
 Keep in mind that because of how React components are compiled within ReScript you cannot use `Counter` (or any React component) directly as it's actually an object. Use components like so:
 
 ```javascript
-<Counter.make>
-  Learn React
-</Counter.make>
+<Counter.make>Learn React</Counter.make>
 ```
