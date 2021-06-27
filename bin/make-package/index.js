@@ -4,6 +4,7 @@ const { exec } = require("child_process");
 const { log, logGreen, logRed } = require("../utils");
 
 const args = process.argv.slice(2);
+const isBindings = args.some((i) => i === "-b");
 
 if (args.length > 0) {
   make();
@@ -35,6 +36,12 @@ async function replaceTokens(dir, pkgName, rootName, files) {
 async function make() {
   let pkgName = args[0];
   let rootName = changeCase.capitalCase(pkgName).replace(/\s/g, "");
+
+  if (isBindings) {
+    pkgName = pkgName.includes("rescript-") ? pkgName : `rescript-${pkgName}`;
+    rootName = rootName.replace("rescript-", "");
+  }
+
   let newDir = `${__dirname}/../../packages/${pkgName}`;
 
   try {
@@ -61,14 +68,17 @@ async function make() {
           }
 
           await fs.writeFile(`${newDir}/src/${rootName}.res`, "");
-          await fs.writeFile(
-            `${newDir}/__fixtures__/_${rootName}.res`,
-            `
+
+          if (!isBindings) {
+            await fs.writeFile(
+              `${newDir}/__fixtures__/_${rootName}.res`,
+              `
 let default = () => {
   React.null
 }
       `
-          );
+            );
+          }
 
           process.chdir(newDir);
 

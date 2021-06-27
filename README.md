@@ -46,6 +46,18 @@ This will install dependencies and generate the following files with everything 
 - README.md
 - [ROOT_FILE].res
 
+### Options
+
+<dl>
+  <dt>-b</dt>
+  <dd>
+    Indicates that the package is bindings and will prepend `rescript-` to the _package name_ if not provided. This makes it clear that the package is ReScript specific. It will also remove `rescript` from the _file name_ if provided which will prevent ReScript users from having to type out `ReScript<PackageName>` each time they use the binding within their project.
+
+    > yarn make [PkgName] -b
+
+  </dd>
+</dl>
+
 ## Developing and Deploying Packages
 
 Run the following scripts within the directory of the package you are developing:
