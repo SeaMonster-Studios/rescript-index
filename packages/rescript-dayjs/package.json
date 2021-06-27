@@ -22,7 +22,8 @@
     "bs-platform": "^9.0.1"
   },
   "dependencies": {
-    "@rescript/std": "^9.0.1"
+    "@rescript/std": "^9.0.1",
+    "dayjs": "^1.10.5"
   },
   "peerDependencies": {
     "react": "^17.0.1",

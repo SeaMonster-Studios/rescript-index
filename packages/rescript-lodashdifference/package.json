@@ -1,8 +1,8 @@
 {
-  "name": "@seamonster-studios/rescript-jscookie",
-  "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/prod/packages/rescript-jscookie",
-  "main": "src/JsCookie.js",
-  "version": "0.0.9",
+  "name": "@seamonster-studios/rescript-lodashdifference",
+  "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/prod/packages/rescript-lodashdifference",
+  "main": "src/package.json.js",
+  "version": "0.0.0",
   "author": "SeaMonster Studios Engineering",
   "scripts": {
     "build": "bsb -make-world",
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@rescript/std": "^9.0.1",
-    "js-cookie": "^2.2.1"
+    "lodash.difference": "^4.5.0"
   },
   "peerDependencies": {
     "react": "^17.0.1",
