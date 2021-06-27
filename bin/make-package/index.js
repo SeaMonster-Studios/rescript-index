@@ -13,7 +13,7 @@ if (args.length > 0) {
   );
 }
 
-async function replaceTokens(dir, pkgName, fileName, files) {
+async function replaceTokens(dir, pkgName, pkgFileName, files) {
   let rePkg = new RegExp("PKG_NAME", "g");
   let reRoot = new RegExp("FILE_NAME", "g");
   let reReadmeTitle = new RegExp("README_TITLE", "g");
@@ -22,10 +22,10 @@ async function replaceTokens(dir, pkgName, fileName, files) {
     files.map(async (fileName) => {
       let file = (await fs.readFile(`${dir}/${fileName}`, "utf8"))
         .replace(rePkg, pkgName)
-        .replace(reRoot, fileName)
+        .replace(reRoot, pkgFileName)
         .replace(
           reReadmeTitle,
-          isBindings ? `${fileName} ReScript Bindings` : fileName
+          isBindings ? `${pkgFileName} ReScript Bindings` : pkgFileName
         );
 
       try {

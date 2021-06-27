@@ -1,4 +1,4 @@
-# README.md ReScript Bindings
+# React Query (v1) ReScript Bindings
 
 Install
 

@@ -1,4 +1,4 @@
-# README.md ReScript Bindings
+# LocalStorage ReScript Bindings
 
 Install
 

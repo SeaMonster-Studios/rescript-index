@@ -1,4 +1,4 @@
-# README.md ReScript Bindings
+# Lodash.isequal ReScript Bindings
 
 Install
 

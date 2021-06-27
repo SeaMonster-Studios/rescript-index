@@ -22,7 +22,8 @@
   "suffix": ".js",
   "bs-dependencies": [
     "@rescript/react",
-    "@seamonster-studios/use-previous"
+    "@seamonster-studios/use-previous",
+    "@seamonster-studios/rescript-lodashisequal"
   ],
   "namespace": false,
   "warnings": {

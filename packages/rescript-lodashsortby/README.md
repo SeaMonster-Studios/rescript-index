@@ -1,4 +1,4 @@
-# README.md ReScript Bindings
+# Lodash.sorby ReScript Bindings
 
 Install
 
