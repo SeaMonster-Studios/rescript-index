@@ -21,7 +21,7 @@
   },
   "suffix": ".js",
   "bs-dependencies": [
-    "@rescript/react"
+
   ],
   "namespace": false,
   "warnings": {

@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/rescript-lang/rescript-compiler/master/docs/docson/build-schema.json",
-  "name": "@seamonster-studios/rescript-dayjs",
+  "name": "@seamonster-studios/rescript-reactquery-v1",
   "version": "0.0.1",
   "sources": [
     {
@@ -21,6 +21,8 @@
   },
   "suffix": ".js",
   "bs-dependencies": [
+    "@rescript/react",
+    "@seamonster-studios/use-previous"
   ],
   "namespace": false,
   "warnings": {
