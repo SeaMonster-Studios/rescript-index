@@ -1,5 +1,4 @@
 const fs = require("fs-extra");
-const changeCase = require("change-case");
 const { exec } = require("child_process");
 const { log, logGreen, logRed } = require("../utils");
 
@@ -14,15 +13,20 @@ if (args.length > 0) {
   );
 }
 
-async function replaceTokens(dir, pkgName, rootName, files) {
+async function replaceTokens(dir, pkgName, fileName, files) {
   let rePkg = new RegExp("PKG_NAME", "g");
-  let reRoot = new RegExp("ROOT_FILE_NAME", "g");
+  let reRoot = new RegExp("FILE_NAME", "g");
+  let reReadmeTitle = new RegExp("README_TITLE", "g");
 
   await Promise.all(
     files.map(async (fileName) => {
       let file = (await fs.readFile(`${dir}/${fileName}`, "utf8"))
         .replace(rePkg, pkgName)
-        .replace(reRoot, rootName);
+        .replace(reRoot, fileName)
+        .replace(
+          reReadmeTitle,
+          isBindings ? `${fileName} ReScript Bindings` : fileName
+        );
 
       try {
         await fs.writeFile(`${dir}/${fileName}`, file);
@@ -34,12 +38,13 @@ async function replaceTokens(dir, pkgName, rootName, files) {
 }
 
 async function make() {
-  let pkgName = args.find((i) => !i.startsWith("-"));
-  let rootName = changeCase.capitalCase(pkgName).replace(/\s/g, "");
+  let name = args.find((i) => !i.startsWith("-"));
+  let pkgName = name.toLowerCase();
+  let fileName = name.replace(/\s/g, "");
 
   if (isBindings) {
     pkgName = pkgName.includes("rescript-") ? pkgName : `rescript-${pkgName}`;
-    rootName = rootName.replace("rescript-", "");
+    fileName = fileName.replace("rescript-", "");
   }
 
   let newDir = `${__dirname}/../../packages/${pkgName}`;
@@ -55,7 +60,7 @@ async function make() {
 
       let files = await fs.readdir(newDir);
 
-      await replaceTokens(newDir, pkgName, rootName, files);
+      await replaceTokens(newDir, pkgName, fileName, files);
 
       fs.mkdir(`${newDir}/src`, async function (err) {
         if (err) {
@@ -67,11 +72,11 @@ async function make() {
             return console.log(error);
           }
 
-          await fs.writeFile(`${newDir}/src/${rootName}.res`, "");
+          await fs.writeFile(`${newDir}/src/${fileName}.res`, "");
 
           if (!isBindings) {
             await fs.writeFile(
-              `${newDir}/__fixtures__/_${rootName}.res`,
+              `${newDir}/__fixtures__/_${fileName}.res`,
               `
 let default = () => {
   React.null
