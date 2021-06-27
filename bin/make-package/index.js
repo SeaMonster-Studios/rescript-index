@@ -34,7 +34,7 @@ async function replaceTokens(dir, pkgName, rootName, files) {
 }
 
 async function make() {
-  let pkgName = args[0];
+  let pkgName = args.find((i) => !i.startsWith("-"));
   let rootName = changeCase.capitalCase(pkgName).replace(/\s/g, "");
 
   if (isBindings) {
