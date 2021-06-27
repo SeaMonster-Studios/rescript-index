@@ -1,16 +1,15 @@
-type dayjs
+type t
 
-@module external now: unit => dayjs = "dayjs"
+@module external now: unit => t = "dayjs"
 
-@module external dayjs: string => dayjs = "dayjs"
+@module external dayjs: string => t = "dayjs"
 
-@send external format: (dayjs, string) => string = "format"
+@send external format: (t, string) => string = "format"
 
 @send
 external diff: (
-  dayjs,
-  dayjs,
-  @string
+  t,
+  t,
   [
     | #millisecond
     | #second

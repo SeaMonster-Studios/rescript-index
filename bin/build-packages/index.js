@@ -1,5 +1,4 @@
 const fs = require("fs-extra");
-const changeCase = require("change-case");
 const { exec } = require("child_process");
 const { log, logGreen, logRed } = require("../utils");
 

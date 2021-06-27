@@ -1,4 +1,4 @@
-# Dayjs
+# Dayjs ReScript Bindings
 
 Install
 
