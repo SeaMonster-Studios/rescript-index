@@ -2,7 +2,7 @@
   "name": "@seamonster-studios/rescript-reactquery-v1",
   "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/prod/packages/rescript-reactquery-v1",
   "main": "src/package.json.js",
-  "version": "0.0.0",
+  "version": "0.0.10",
   "author": "SeaMonster Studios Engineering",
   "scripts": {
     "build": "bsb -make-world",
@@ -19,10 +19,10 @@
   },
   "devDependencies": {
     "@rescript/react": "^0.10.3",
-    "@seamonster-studios/use-previous": "^0.0.9",
-    "rescript": "^9.1.4",
+    "@seamonster-studios/use-previous": "^0.0.10",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "rescript": "^9.1.4"
   },
   "dependencies": {
     "@rescript/std": "^9.0.1",

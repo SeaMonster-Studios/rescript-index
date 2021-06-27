@@ -2,7 +2,7 @@
   "name": "@seamonster-studios/rescript-lodashdifference",
   "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/prod/packages/rescript-lodashdifference",
   "main": "src/package.json.js",
-  "version": "0.0.0",
+  "version": "0.0.10",
   "author": "SeaMonster Studios Engineering",
   "scripts": {
     "build": "bsb -make-world",
