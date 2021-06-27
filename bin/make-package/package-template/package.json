@@ -5,9 +5,9 @@
   "version": "0.0.0",
   "author": "SeaMonster Studios Engineering",
   "scripts": {
-    "build": "bsb -make-world",
-    "clean": "bsb -clean-world",
-    "dev": "bsb -make-world -w",
+    "build": "rescript build",
+    "clean": "rescript clean",
+    "dev": "rescript build -w",
     "deploy": "cd ../../ && yarn deploy"
   },
   "keywords": [

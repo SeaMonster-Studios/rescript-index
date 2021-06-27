@@ -2423,20 +2423,10 @@
     schema-utils "^2.6.5"
     source-map "^0.7.3"
 
-"@rescript/react@^0.10.1":
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/@rescript/react/-/react-0.10.1.tgz#ddce66ba664a104354d559c350ca4ebf17ab5a26"
-  integrity sha512-5eIfGnV1yhjv03ktK6fQ6iEfsZKXKXXrq5hx4+ngEY4R/RU8o/oH9ne375m9RJMugV/jsE8hMoEeSSg2YQy3Ag==
-
 "@rescript/react@^0.10.3":
   version "0.10.3"
   resolved "https://registry.yarnpkg.com/@rescript/react/-/react-0.10.3.tgz#a2a8bed6b017940ec26c2154764b350f50348889"
   integrity sha512-Lf9rzrR3bQPKJjOK3PBRa/B3xrJ7CqQ1HYr9VHPVxJidarIJJFZBhj0Dg1uZURX+Wg/xiP0PHFxXmdj2bK8Vxw==
-
-"@rescript/std@^9.0.1":
-  version "9.0.1"
-  resolved "https://registry.yarnpkg.com/@rescript/std/-/std-9.0.1.tgz#4597be595256f79f4c2f3eaeb56981340e18e700"
-  integrity sha512-JUdxfVjHjRzrTwcZbLaPHEzN3id6XGdLFxubp6Bimj0/1CmIYgfLaUhflac1KAyI1lKIM2Htrz6U6bHkuihnZg==
 
 "@rescript/std@^9.1.3":
   version "9.1.3"
@@ -4117,11 +4107,6 @@ browserslist@^4.0.0, browserslist@^4.12.0, browserslist@^4.16.6, browserslist@^4
     electron-to-chromium "^1.3.723"
     escalade "^3.1.1"
     node-releases "^1.1.71"
-
-bs-platform@^9.0.1:
-  version "9.0.1"
-  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-9.0.1.tgz#069dae007aadb400963cec25c8349ea1f3f6cae0"
-  integrity sha512-RxUrwxVBCx9AiiyFIthZwfPn+tAn9noRHCb9xJK4Uw2deGxIytqyoWDepMbH35v7EpxX0OhfXL5RrjHTaXersA==
 
 bser@2.1.1:
   version "2.1.1"
