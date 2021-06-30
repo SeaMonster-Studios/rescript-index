@@ -1,6 +1,7 @@
 const fs = require("fs-extra");
 const { exec } = require("child_process");
 const { log, logGreen, logRed } = require("../utils");
+const changeCase = require("change-case");
 
 const args = process.argv.slice(2);
 const isBindings = args.some((i) => i === "-b");
@@ -39,8 +40,8 @@ async function replaceTokens(dir, pkgName, pkgFileName, files) {
 
 async function make() {
   let name = args.find((i) => !i.startsWith("-"));
-  let pkgName = name.toLowerCase();
-  let fileName = name.replace(/\s/g, "");
+  let pkgName = changeCase.paramCase(name);
+  let fileName = changeCase.pascalCase(name.replace(/\s/g, ""));
 
   if (isBindings) {
     pkgName = pkgName.includes("rescript-") ? pkgName : `rescript-${pkgName}`;
