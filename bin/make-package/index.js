@@ -5,6 +5,7 @@ const changeCase = require("change-case");
 
 const args = process.argv.slice(2);
 const isBindings = args.some((i) => i === "-b");
+const isReact = args.some((i) => i === "-r");
 
 if (args.length > 0) {
   make();
@@ -29,6 +30,21 @@ async function replaceTokens(dir, pkgName, pkgFileName, files) {
           isBindings ? `${pkgFileName} ReScript Bindings` : pkgFileName
         );
 
+      let bsConfig;
+
+      if (isReact && fileName === "bsconfig.json") {
+        bsConfig = JSON.parse(file);
+        bsConfig = {
+          ...bsConfig,
+          "bs-dependencies": [
+            ...bsConfig["bs-dependencies"],
+            "@rescript/react",
+          ],
+        };
+
+        file = JSON.stringify(bsConfig);
+      }
+
       try {
         await fs.writeFile(`${dir}/${fileName}`, file);
       } catch (error) {
@@ -52,6 +68,7 @@ async function make() {
 
   try {
     await fs.readdir(newDir);
+    console.log("here");
     logRed(
       `A \`${pkgName}\` package already exits. Please select a different name.`
     );
@@ -90,7 +107,11 @@ let default = () => {
 
           log("Installing dependencies...");
 
-          exec("yarn && yarn build", (err, stdout, stderr) => {
+          let initCmd = isReact
+            ? `yarn && yarn add @rescript/react react react-dom && yarn build`
+            : `yarn && yarn build`;
+
+          exec(initCmd, (err, stdout, stderr) => {
             if (err) {
               logRed(`Failed to create \`${pkgName}\` package...`);
               console.error(err);
@@ -102,7 +123,8 @@ let default = () => {
           });
         });
       });
-    } catch (_error) {
+    } catch (error) {
+      console.log("error", error);
       logRed(
         `A \`${pkgName}\` package already exits. Please select a different name.`
       );

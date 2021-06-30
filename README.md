@@ -56,6 +56,13 @@ This will install dependencies and generate the following files with everything 
     > yarn make [PkgName] -b
 
   </dd>
+  <dt>-r</dt>
+  <dd>
+    Indicates that the package is uses React and well setup the dependencies accordingly
+
+    > yarn make [PkgName] -r
+
+  </dd>
 </dl>
 
 ## Developing and Deploying Packages
