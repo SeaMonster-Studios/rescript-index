@@ -92,7 +92,9 @@ async function make() {
 
           await fs.writeFile(`${newDir}/src/${fileName}.res`, "");
 
-          if (!isBindings) {
+          await fs.openSync(`${newDir}/__fixtures__/.gitkeep`, "w");
+
+          if (!isBindings && isReact) {
             await fs.writeFile(
               `${newDir}/__fixtures__/_${fileName}.res`,
               `
