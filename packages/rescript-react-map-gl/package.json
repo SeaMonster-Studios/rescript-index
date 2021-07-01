@@ -1,0 +1,30 @@
+{
+  "name": "@seamonster-studios/rescript-react-map-gl",
+  "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/prod/packages/rescript-react-map-gl",
+  "main": "src/ReactMapGl.js",
+  "version": "0.0.0",
+  "author": "SeaMonster Studios Engineering",
+  "scripts": {
+    "build": "rescript build",
+    "clean": "rescript clean",
+    "dev": "rescript build -w",
+    "deploy": "cd ../../ && yarn deploy"
+  },
+  "keywords": [
+    "rescript"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "rescript": "^9.1.3"
+  },
+  "dependencies": {
+    "@rescript/react": "^0.10.3",
+    "@rescript/std": "^9.1.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-map-gl": "^6.1.16"
+  }
+}
