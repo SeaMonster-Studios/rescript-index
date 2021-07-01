@@ -33,4 +33,4 @@ type bounds = {
 }
 
 @module("react-use-measure")
-external useHook: params => (ReactDOMRe.domRef, bounds) = "default"
+external useHook: params => (ReactDOM.Ref.t, bounds) = "default"

@@ -35,7 +35,7 @@ type toggleButtonProps = {
   "onClick": ReactEvent.Mouse.t => unit,
   @meth
   "onKeyDown": ReactEvent.Keyboard.t => unit,
-  "ref": ReactDOMRe.domRef,
+  "ref": ReactDOM.Ref.t,
 }
 
 type labelProps = {"id": string, "htmlFor": string}
@@ -49,7 +49,7 @@ type menuProps = {
   "onKeyDown": ReactEvent.Keyboard.t => unit,
   @meth
   "onMouseLeave": ReactEvent.Mouse.t => unit,
-  "ref": ReactDOMRe.domRef,
+  "ref": ReactDOM.Ref.t,
   "role": string,
   "tabIndex": int,
 }
@@ -61,7 +61,7 @@ type itemProps = {
   "onClick": ReactEvent.Mouse.t => unit,
   @meth
   "onMouseMove": ReactEvent.Mouse.t => unit,
-  "ref": ReactDOMRe.domRef,
+  "ref": ReactDOM.Ref.t,
 }
 
 @deriving(abstract)
@@ -92,7 +92,7 @@ type actionAndChanges<'i> = {
     @meth
     "getA11yStatusMessage": unit => string,
     @meth
-    "scrollIntoView": (ReactDOMRe.domRef, ReactDOMRe.domRef) => unit,
+    "scrollIntoView": (ReactDOM.Ref.t, ReactDOM.Ref.t) => unit,
     @meth
     "stateReducer": (state<'i>, state<'i>) => state<'i>,
   },

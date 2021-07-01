@@ -1,3 +1,9 @@
+type width = string
+type height = string
+type latitude = float
+type longitude = float
+type zoom = int
+
 type viewport = {
   "width": width,
   "height": height,
