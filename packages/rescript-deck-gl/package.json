@@ -2,7 +2,7 @@
   "name": "@seamonster-studios/rescript-deck-gl",
   "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/prod/packages/rescript-deck-gl",
   "main": "src/DeckGl.js",
-  "version": "0.0.0",
+  "version": "0.1.0-alpha.0",
   "author": "SeaMonster Studios Engineering",
   "scripts": {
     "build": "rescript build",
