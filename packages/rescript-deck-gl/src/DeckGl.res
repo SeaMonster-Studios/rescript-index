@@ -1,16 +1,4 @@
-type width = string
-type height = string
-type latitude = float
-type longitude = float
-type zoom = int
-
-type viewport = {
-  "width": width,
-  "height": height,
-  "latitude": latitude,
-  "longitude": longitude,
-  "zoom": zoom,
-}
+type viewport = ReactMapGl.viewport
 
 type datum = {
   coordinates: array<float>,

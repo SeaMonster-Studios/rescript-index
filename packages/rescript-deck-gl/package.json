@@ -26,5 +26,8 @@
     "deck.gl": "^8.4.19",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "peerDependencies": {
+    "@seamonster-studios/rescript-react-map-gl": "^0.1.0-alpha.0"
   }
 }
