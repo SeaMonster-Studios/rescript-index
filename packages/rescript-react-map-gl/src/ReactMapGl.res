@@ -4,6 +4,8 @@ type latitude = float
 type longitude = float
 type zoom = int
 
+type test
+
 type viewport = {
   "width": width,
   "height": height,
