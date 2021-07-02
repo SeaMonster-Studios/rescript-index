@@ -1,8 +1,9 @@
 {
   "name": "@seamonster-studios/use-previous",
-  "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/prod/packages/use-previous",
+  "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/main/packages/use-previous",
   "main": "src/UsePrevious.js",
   "version": "1.0.0",
+  "private": false,
   "author": "SeaMonster Studios Engineering",
   "scripts": {
     "build": "rescript build",

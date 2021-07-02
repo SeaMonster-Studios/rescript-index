@@ -1,8 +1,9 @@
 {
   "name": "@seamonster-studios/use-countdown",
-  "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/prod/packages/use-countdown",
+  "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/main/packages/use-countdown",
   "main": "src/UseCountdown.js",
   "version": "1.0.0",
+  "private": false,
   "author": "SeaMonster Studios Engineering",
   "scripts": {
     "build": "rescript build",

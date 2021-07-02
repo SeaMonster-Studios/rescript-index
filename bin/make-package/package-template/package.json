@@ -1,6 +1,6 @@
 {
   "name": "@seamonster-studios/PKG_NAME",
-  "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/prod/packages/PKG_NAME",
+  "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/main/packages/PKG_NAME",
   "main": "src/FILE_NAME.js",
   "version": "0.0.0",
   "author": "SeaMonster Studios Engineering",

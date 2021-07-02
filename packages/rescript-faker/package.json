@@ -1,8 +1,9 @@
 {
   "name": "@seamonster-studios/rescript-faker",
-  "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/prod/packages/rescript-faker",
+  "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/main/packages/rescript-faker",
   "main": "src/Faker.js",
   "version": "1.0.0",
+  "private": false,
   "author": "SeaMonster Studios Engineering",
   "scripts": {
     "build": "rescript build",
