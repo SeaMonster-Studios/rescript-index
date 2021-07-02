@@ -1,6 +1,5 @@
 {
   "name": "@seamonster-studios/rescript-index",
-  "version": "0.0.0",
   "author": "SeaMonster Studios Engineering",
   "private": true,
   "workspaces": [
@@ -17,7 +16,6 @@
     "deploy": "./node_modules/.bin/lerna publish",
     "clean": "rm -rf ./cosmos-export"
   },
-  "main": "index.js",
   "license": "MIT",
   "keywords": [
     "rescript"
@@ -38,7 +36,6 @@
     "serve": "^11.3.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
-  "dependencies": {},
   "browserslist": {
     "production": [
       ">0.2%",
