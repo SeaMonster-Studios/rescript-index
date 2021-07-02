@@ -28,7 +28,7 @@
     "change-case": "^4.1.2",
     "cross-env": "^7.0.3",
     "fs-extra": "^9.1.0",
-    "lerna": "^3.22.1",
+    "lerna": "^4.0.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^7",
     "react": "^17.0.2",
