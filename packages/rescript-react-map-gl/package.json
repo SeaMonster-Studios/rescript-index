@@ -2,7 +2,7 @@
   "name": "@seamonster-studios/rescript-react-map-gl",
   "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/prod/packages/rescript-react-map-gl",
   "main": "src/ReactMapGl.js",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "author": "SeaMonster Studios Engineering",
   "scripts": {
     "build": "rescript build",
