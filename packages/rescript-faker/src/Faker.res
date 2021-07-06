@@ -323,23 +323,23 @@ module Git = {
   external shortSha: unit => string = "shortSha"
 }
 
-module Haker = {
-  @val @module("faker") @scope("haker")
+module Hacker = {
+  @val @module("faker") @scope("hacker")
   external abbreviation: unit => string = "abbreviation"
 
-  @val @module("faker") @scope("haker")
+  @val @module("faker") @scope("hacker")
   external adjective: unit => string = "adjective"
 
-  @val @module("faker") @scope("haker")
+  @val @module("faker") @scope("hacker")
   external noun: unit => string = "noun"
 
-  @val @module("faker") @scope("haker")
+  @val @module("faker") @scope("hacker")
   external verb: unit => string = "verb"
 
-  @val @module("faker") @scope("haker")
+  @val @module("faker") @scope("hacker")
   external ingverb: unit => string = "ingverb"
 
-  @val @module("faker") @scope("haker")
+  @val @module("faker") @scope("hacker")
   external phrase: unit => string = "phrase"
 }
 
