@@ -208,7 +208,7 @@ module Datatype = {
   @val @module("faker") @scope("datatype")
   external float: unit => float = "float"
 
-  type intRange = {
+  type floatRange = {
     min: float,
     max: float,
   }
