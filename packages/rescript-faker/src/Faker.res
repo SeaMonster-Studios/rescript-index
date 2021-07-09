@@ -214,7 +214,7 @@ module Datatype = {
   }
 
   @val @module("faker") @scope("datatype")
-  external floatWithRance: floatRange => float = "float"
+  external floatWithRange: floatRange => float = "float"
 
   @val @module("faker") @scope("datatype")
   external datetime: unit => Js.Date.t = "datetime"
