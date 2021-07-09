@@ -197,16 +197,24 @@ module Datatype = {
   @val @module("faker") @scope("datatype")
   external number: unit => int = "number"
 
-  type range = {
+  type intRange = {
     min: int,
     max: int,
   }
 
   @val @module("faker") @scope("datatype")
-  external numberWithRange: range => int = "number"
+  external numberWithRange: intRange => int = "number"
 
   @val @module("faker") @scope("datatype")
   external float: unit => float = "float"
+
+  type intRange = {
+    min: float,
+    max: float,
+  }
+
+  @val @module("faker") @scope("datatype")
+  external floatWithRance: floatRange => float = "float"
 
   @val @module("faker") @scope("datatype")
   external datetime: unit => Js.Date.t = "datetime"
