@@ -4,6 +4,8 @@ import * as React from "react";
 import * as Downshift from "../src/Downshift.js";
 import * as Downshift$1 from "downshift";
 import * as Belt_Array from "@rescript/std/lib/es6/belt_Array.js";
+import * as Belt_Option from "@rescript/std/lib/es6/belt_Option.js";
+import * as Caml_option from "@rescript/std/lib/es6/caml_option.js";
 import * as Downshift_Select from "../src/Downshift_Select.js";
 
 var Select = Downshift_Select.Make({});
@@ -35,7 +37,10 @@ var DownArrow = {
 function $$default(param) {
   var items = [
     "Option 1",
-    "Option 2"
+    "Option 2",
+    "Option 3",
+    "Option 5",
+    "Option 6"
   ];
   var select = Downshift$1.useSelect({
         items: items
@@ -46,7 +51,7 @@ function $$default(param) {
       ]);
   var selectedItem = select.selectedItem;
   return React.createElement("div", {
-              className: "flex flex-col items-start"
+              className: "flex flex-col items-start m-8"
             }, React.createElement(Downshift.Spread.make, {
                   props: select.getLabelProps(),
                   children: React.createElement("label", {
@@ -55,7 +60,7 @@ function $$default(param) {
                 }), React.createElement(Downshift.Spread.make, {
                   props: select.getToggleButtonProps(),
                   children: React.createElement("button", {
-                        className: "flex focus:bg-black hover:bg-black focus:text-white hover:text-white items-center justify-center border duration-300 border-black rounded-md px-3 py-2 transition-all",
+                        className: "flex focus:bg-black hover:bg-black focus:text-white hover:text-white items-center justify-between border duration-300 w-full   border-black rounded-md px-3 py-2 transition-all",
                         type: "button"
                       }, React.createElement("span", undefined, (selectedItem == null) ? "Options" : selectedItem), React.createElement(_DownshiftSelect$DownArrow, {
                             className: "ml-2 p-1 w-5 h-auto"
@@ -63,14 +68,19 @@ function $$default(param) {
                 }), React.createElement(Downshift.Spread.make, {
                   props: select.getMenuProps(),
                   children: React.createElement("ul", {
-                        className: "bg-white border expanded:::p-1 border-black rounded-md"
+                        className: "bg-white transition-opacity opacity-0 aria-expanded:::opacity-100 max-h-40 overflow-y-scroll w-full mt-1 shadow-md"
                       }, select.isOpen ? React.createElement(React.Fragment, undefined, Belt_Array.mapWithIndex(items, (function (index, item) {
+                                    console.log(select.getItemProps({
+                                              index: index
+                                            }));
                                     return React.createElement(Downshift.Spread.make, {
                                                 props: select.getItemProps({
                                                       index: index
                                                     }),
                                                 children: React.createElement("li", {
-                                                      className: "text-sm"
+                                                      className: "text-sm py-2 px-3 first:rounded-t border border-l-black border-r-black last:rounded-b hover:cursor-pointer hover:bg-black hover:text-white  transition-colors duration-500 " + (
+                                                        Belt_Option.getWithDefault(Caml_option.nullable_to_opt(select.selectedItem), "") === item ? "bg-black text-white bg-opacity-60" : ""
+                                                      )
                                                     }, item),
                                                 key: item + String(index)
                                               });

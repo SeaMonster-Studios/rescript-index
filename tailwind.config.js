@@ -12,10 +12,28 @@ module.exports = {
   },
   plugins: [
     plugin(function ({ addVariant, e }) {
-      addVariant("expanded::", ({ modifySelectors, separator }) => {
+      addVariant("aria-selected", ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `[aria-selected="true"].${e(
+            `aria-selected::${separator}${className}`
+          )}`;
+        });
+      });
+    }),
+    plugin(function ({ addVariant, e }) {
+      addVariant("aria-expanded", ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `[aria-expanded="true"].${e(
+            `aria-expanded::${separator}${className}`
+          )}`;
+        });
+      });
+    }),
+    plugin(function ({ addVariant, e }) {
+      addVariant("aria-expanded::", ({ modifySelectors, separator }) => {
         modifySelectors(({ className }) => {
           return `[aria-expanded="true"] ~ .${e(
-            `expanded::${separator}${className}`
+            `aria-expanded::${separator}${className}`
           )}`;
         });
       });
@@ -23,7 +41,11 @@ module.exports = {
   ],
   variants: {
     extend: {
-      padding: ["expanded::"],
+      opacity: ["aria-expanded::"],
+      cursor: ["hover"],
+      backgroundColor: ["aria-selected"],
+      textColor: ["aria-selected"],
+      borderRadius: ["first", "last"],
     },
   },
 };

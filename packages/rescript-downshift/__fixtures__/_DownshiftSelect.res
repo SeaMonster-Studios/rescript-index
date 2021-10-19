@@ -30,18 +30,18 @@ module DownArrow = {
 }
 
 let default = () => {
-  let items = ["Option 1", "Option 2"]
+  let items = ["Option 1", "Option 2", "Option 3", "Option 5", "Option 6"]
   let select = use(options(~items, ()))
   ("selected", select.selectedItem)->Js.log
 
-  <div className="flex flex-col items-start">
+  <div className="flex flex-col items-start m-8">
     <Spread props={select->getLabelProps}>
       <label className="mb-2"> {"Choose an option"->React.string} </label>
     </Spread>
     <Spread props={select->getToggleButtonProps}>
       <button
         type_="button"
-        className="flex focus:bg-black hover:bg-black focus:text-white hover:text-white items-center justify-center border duration-300 border-black rounded-md px-3 py-2 transition-all">
+        className="flex focus:bg-black hover:bg-black focus:text-white hover:text-white items-center justify-between border duration-300 w-full   border-black rounded-md px-3 py-2 transition-all">
         <span>
           {switch select.selectedItem->Js.Nullable.toOption {
           | None => "Options"
@@ -52,16 +52,25 @@ let default = () => {
       </button>
     </Spread>
     <Spread props={select->getMenuProps}>
-      <ul className="bg-white border expanded:::p-1 border-black rounded-md">
+      <ul
+        className="bg-white transition-opacity opacity-0 aria-expanded:::opacity-100 max-h-40 overflow-y-scroll w-full mt-1 shadow-md">
         {switch select.isOpen {
         | false => React.null
         | true => <>
             {items
             ->Array.mapWithIndex((index, item) => {
+              Js.log(select->getItemProps(itemPropsOptions(~index, ())))
               <Spread
                 key={`${item}${index->string_of_int}`}
                 props={select->getItemProps(itemPropsOptions(~index, ()))}>
-                <li className="text-sm"> {item->React.string} </li>
+                <li
+                  className={`text-sm py-2 px-3 first:rounded-t border border-l-black border-r-black last:rounded-b hover:cursor-pointer hover:bg-black hover:text-white  transition-colors duration-500 ${select.selectedItem
+                    ->Js.Nullable.toOption
+                    ->Option.getWithDefault("") == item
+                      ? "bg-black text-white bg-opacity-60"
+                      : ""}`}>
+                  {item->React.string}
+                </li>
               </Spread>
             })
             ->React.array}
