@@ -53,7 +53,7 @@ let default = () => {
     </Spread>
     <Spread props={select->getMenuProps}>
       <ul
-        className="bg-white transition-opacity opacity-0 aria-expanded:::opacity-100 max-h-40 overflow-y-scroll w-full mt-1 shadow-md">
+        className="bg-white transition-opacity opacity-0 aria-expanded:opacity-100 max-h-40 overflow-y-scroll w-full mt-1 shadow-md">
         {switch select.isOpen {
         | false => React.null
         | true => <>

@@ -285,4 +285,32 @@ let make = () => {
 }
 
 
+
+```
+
+Tailwind Config Additions
+
+```js
+const plugin = require("tailwindcss/plugin");
+
+module.exports = {
+  plugins: [
+    plugin(function ({ addVariant, e }) {
+      addVariant("aria-expanded", ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `[aria-expanded="true"] ~ .${e(
+            `aria-expanded${separator}${className}`
+          )}`;
+        });
+      });
+    }),
+  ],
+  variants: {
+    extend: {
+      opacity: ["aria-expanded"],
+      cursor: ["hover"],
+      borderRadius: ["first", "last"],
+    },
+  },
+};
 ```

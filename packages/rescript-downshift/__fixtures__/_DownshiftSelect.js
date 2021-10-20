@@ -68,7 +68,7 @@ function $$default(param) {
                 }), React.createElement(Downshift.Spread.make, {
                   props: select.getMenuProps(),
                   children: React.createElement("ul", {
-                        className: "bg-white transition-opacity opacity-0 aria-expanded:::opacity-100 max-h-40 overflow-y-scroll w-full mt-1 shadow-md"
+                        className: "bg-white transition-opacity opacity-0 aria-expanded:opacity-100 max-h-40 overflow-y-scroll w-full mt-1 shadow-md"
                       }, select.isOpen ? React.createElement(React.Fragment, undefined, Belt_Array.mapWithIndex(items, (function (index, item) {
                                     console.log(select.getItemProps({
                                               index: index
