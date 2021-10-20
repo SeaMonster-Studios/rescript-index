@@ -288,7 +288,7 @@ let make = () => {
 
 ```
 
-Tailwind Config Additions
+Additions to `taliwind.config.js`
 
 ```js
 const plugin = require("tailwindcss/plugin");
