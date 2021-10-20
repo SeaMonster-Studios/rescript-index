@@ -4,7 +4,7 @@ Install
 
 `yarn add @seamonster-studios/rescript-downshift`
 
-## use-select with ReForm example
+## use-select with ReForm and TailwindCSS example
 
 ```rescript
 
@@ -13,6 +13,78 @@ Install
 @module("react")
 external useMemo10: (@uncurry (unit => 'any), ('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j)) => 'any =
   "useMemo"
+
+/* FieldSelect.res ------------------------------------------------- */
+
+open Belt
+open Downshift
+
+@react.component
+let make = (
+  ~items,
+  ~disabled,
+  ~className="",
+  ~label,
+  ~placeholder="Options",
+  ~error: React.element,
+  ~labelProps,
+  ~toggleButtonProps,
+  ~menuProps,
+  ~selectedItem,
+  ~itemToString: Js.Nullable.t<'a> => string,
+  ~getItemProps,
+  ~isOpen,
+) => {
+  let value = itemToString(selectedItem)
+  <div className={`flex flex-col items-start ${className} relative`}>
+    <Spread props={labelProps}> {label} </Spread>
+    <Spread props={toggleButtonProps}>
+      <button
+        disabled
+        type_="button"
+        className="flex focus:bg-black hover:bg-black focus:text-white hover:text-white items-center justify-between border duration-300 w-full border-black rounded-md px-3 py-2 transition-all">
+        <span>
+          {switch selectedItem->Js.Nullable.toOption {
+          | None => placeholder
+          | Some(_) => value
+          }->React.string}
+        </span>
+        <Icons.DownArrow className="ml-2 p-1 w-5 h-auto" />
+      </button>
+    </Spread>
+    <Spread props={menuProps}>
+      <ul
+        className="bg-white transition-opacity opacity-0 absolute z-10 aria-expanded:opacity-100 max-h-40 overflow-y-auto w-full top-full mt-1 shadow-md">
+        {switch isOpen {
+        | false => React.null
+        | true => <>
+            {items
+            ->Array.mapWithIndex((index, item) => {
+              let itemString = item->Js.Nullable.return->itemToString
+              <Spread key={`${value}${index->string_of_int}`} props={getItemProps(index)}>
+                <li
+                  className={`text-sm py-2 px-3 first:rounded-t border border-l-black border-r-black last:rounded-b hover:cursor-pointer hover:bg-black hover:text-white  transition-colors duration-500
+									${switch selectedItem->Js.Nullable.toOption {
+                    | None => ""
+                    | Some(_) =>
+                      switch value == itemString {
+                      | false => ""
+                      | true => " bg-black text-white bg-opacity-60 "
+                      }
+                    }}`}>
+                  {itemString->React.string}
+                </li>
+              </Spread>
+            })
+            ->React.array}
+          </>
+        }}
+      </ul>
+    </Spread>
+    error
+  </div>
+}
+
 
 /* FormMaker.res ------------------------------------------------- */
 
