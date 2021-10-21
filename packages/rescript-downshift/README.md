@@ -71,7 +71,7 @@ let make = (
               let itemString = item->Js.Nullable.return->itemToString
               <Spread key={`${value}${index->string_of_int}`} props={getItemProps(index)}>
                 <li
-                  className={`text-sm py-2 px-3 first:rounded-t border border-l-black border-r-black last:rounded-b hover:cursor-pointer hover:bg-black hover:text-white  transition-colors duration-500
+                  className={`text-sm py-2 px-3 first:rounded-t aria-selected:text-white aria-selected:bg-black border border-l-black border-r-black last:rounded-b hover:cursor-pointer hover:bg-black hover:text-white  transition-colors duration-500
 									${switch selectedItem->Js.Nullable.toOption {
                     | None => ""
                     | Some(_) =>
@@ -312,9 +312,20 @@ module.exports = {
         });
       });
     }),
+    plugin(function ({ addVariant, e }) {
+      addVariant("aria-selected", ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `[aria-selected="true"].${e(
+            `aria-selected${separator}${className}`
+          )}`;
+        });
+      });
+    }),
   ],
   variants: {
     extend: {
+      backgroundColor: ["aria-selected"],
+      textColor: ["aria-selected"],
       opacity: ["aria-expanded"],
       cursor: ["hover"],
       borderRadius: ["first", "last"],
