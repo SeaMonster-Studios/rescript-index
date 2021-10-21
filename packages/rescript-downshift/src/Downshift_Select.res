@@ -159,7 +159,7 @@ module Make = (Config: Config) => {
     @optional
     isOpen: bool,
     @optional
-    selectedItem: item,
+    selectedItem: Js.Nullable.t<item>,
     @optional
     id: string,
     @optional
