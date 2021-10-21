@@ -1,3 +1,5 @@
+const plugin = require("tailwindcss/plugin");
+
 module.exports = {
   purge: [
     "./src/**/*.{js,jsx,ts,tsx,css,res}",
@@ -8,8 +10,33 @@ module.exports = {
   theme: {
     extend: {},
   },
+  plugins: [
+    plugin(function ({ addVariant, e }) {
+      addVariant("aria-expanded", ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `[aria-expanded="true"] ~ .${e(
+            `aria-expanded${separator}${className}`
+          )}`;
+        });
+      });
+    }),
+    plugin(function ({ addVariant, e }) {
+      addVariant("aria-selected", ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `[aria-selected="true"].${e(
+            `aria-selected${separator}${className}`
+          )}`;
+        });
+      });
+    }),
+  ],
   variants: {
-    extend: {},
+    extend: {
+      opacity: ["aria-expanded"],
+      cursor: ["hover"],
+      backgroundColor: ["aria-selected"],
+      textColor: ["aria-selected"],
+      borderRadius: ["first", "last"],
+    },
   },
-  plugins: [],
 };
