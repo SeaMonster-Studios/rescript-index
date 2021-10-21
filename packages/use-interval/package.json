@@ -2,7 +2,7 @@
   "name": "@seamonster-studios/use-interval",
   "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/main/packages/use-interval",
   "main": "src/use-interval.js",
-  "version": "1.0.1",
+  "version": "1.0.9",
   "private": false,
   "author": "SeaMonster Studios Engineering",
   "scripts": {
