@@ -2,7 +2,15 @@
 
 Install
 
-`yarn add @seamonster-studios/rescript-downshift`
+`yarn add @seamonster-studios/rescript-downshift @seamonster-studios/react-spread`
+
+Add the following to your `bsconfig.json`
+
+```json
+...
+"bs-dependencies": [..., "@seamonster-studios/rescript-downshift"],
+...
+```
 
 ## use-select with ReForm and TailwindCSS example
 

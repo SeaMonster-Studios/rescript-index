@@ -35,10 +35,10 @@ let default = () => {
   ("selected", select.selectedItem)->Js.log
 
   <div className="flex flex-col items-start m-8">
-    <Spread props={select->getLabelProps}>
+    <ReactSpread props={select->getLabelProps}>
       <label className="mb-2"> {"Choose an option"->React.string} </label>
-    </Spread>
-    <Spread props={select->getToggleButtonProps}>
+    </ReactSpread>
+    <ReactSpread props={select->getToggleButtonProps}>
       <button
         type_="button"
         className="flex focus:bg-black hover:bg-black focus:text-white hover:text-white items-center justify-between border duration-300 w-full   border-black rounded-md px-3 py-2 transition-all">
@@ -50,8 +50,8 @@ let default = () => {
         </span>
         <DownArrow className="ml-2 p-1 w-5 h-auto" />
       </button>
-    </Spread>
-    <Spread props={select->getMenuProps}>
+    </ReactSpread>
+    <ReactSpread props={select->getMenuProps}>
       <ul
         className="bg-white transition-opacity opacity-0 aria-expanded:opacity-100 max-h-40 overflow-y-scroll w-full mt-1 shadow-md">
         {switch select.isOpen {
@@ -60,7 +60,7 @@ let default = () => {
             {items
             ->Array.mapWithIndex((index, item) => {
               Js.log(select->getItemProps(itemPropsOptions(~index, ())))
-              <Spread
+              <ReactSpread
                 key={`${item}${index->string_of_int}`}
                 props={select->getItemProps(itemPropsOptions(~index, ()))}>
                 <li
@@ -71,12 +71,12 @@ let default = () => {
                       : ""}`}>
                   {item->React.string}
                 </li>
-              </Spread>
+              </ReactSpread>
             })
             ->React.array}
           </>
         }}
       </ul>
-    </Spread>
+    </ReactSpread>
   </div>
 }
