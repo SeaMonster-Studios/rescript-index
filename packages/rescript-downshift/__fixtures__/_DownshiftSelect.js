@@ -45,10 +45,6 @@ function $$default(param) {
   var select = Downshift.useSelect({
         items: items
       });
-  console.log([
-        "selected",
-        select.selectedItem
-      ]);
   var selectedItem = select.selectedItem;
   return React.createElement("div", {
               className: "flex flex-col items-start m-8"
@@ -70,9 +66,6 @@ function $$default(param) {
                   children: React.createElement("ul", {
                         className: "bg-white transition-opacity opacity-0 aria-expanded:opacity-100 max-h-40 overflow-y-scroll w-full mt-1 shadow-md"
                       }, select.isOpen ? React.createElement(React.Fragment, undefined, Belt_Array.mapWithIndex(items, (function (index, item) {
-                                    console.log(select.getItemProps({
-                                              index: index
-                                            }));
                                     return React.createElement(ReactSpread.make, {
                                                 props: select.getItemProps({
                                                       index: index

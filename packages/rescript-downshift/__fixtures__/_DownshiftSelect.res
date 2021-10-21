@@ -32,7 +32,6 @@ module DownArrow = {
 let default = () => {
   let items = ["Option 1", "Option 2", "Option 3", "Option 5", "Option 6"]
   let select = use(options(~items, ()))
-  ("selected", select.selectedItem)->Js.log
 
   <div className="flex flex-col items-start m-8">
     <ReactSpread props={select->getLabelProps}>
@@ -59,7 +58,6 @@ let default = () => {
         | true => <>
             {items
             ->Array.mapWithIndex((index, item) => {
-              Js.log(select->getItemProps(itemPropsOptions(~index, ())))
               <ReactSpread
                 key={`${item}${index->string_of_int}`}
                 props={select->getItemProps(itemPropsOptions(~index, ()))}>
