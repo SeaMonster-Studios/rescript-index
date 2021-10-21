@@ -64,7 +64,7 @@ let default = () => {
                 key={`${item}${index->string_of_int}`}
                 props={select->getItemProps(itemPropsOptions(~index, ()))}>
                 <li
-                  className={`text-sm py-2 px-3 first:rounded-t border border-l-black border-r-black last:rounded-b hover:cursor-pointer hover:bg-black hover:text-white  transition-colors duration-500 ${select.selectedItem
+                  className={`text-sm py-2 px-3 first:rounded-t border border-l-black border-r-black last:rounded-b hover:cursor-pointer hover:bg-black hover:text-white aria-selected:text-white aria-selected:bg-black transition-colors duration-500 ${select.selectedItem
                     ->Js.Nullable.toOption
                     ->Option.getWithDefault("") == item
                       ? "bg-black text-white bg-opacity-60"

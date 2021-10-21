@@ -78,7 +78,7 @@ function $$default(param) {
                                                       index: index
                                                     }),
                                                 children: React.createElement("li", {
-                                                      className: "text-sm py-2 px-3 first:rounded-t border border-l-black border-r-black last:rounded-b hover:cursor-pointer hover:bg-black hover:text-white  transition-colors duration-500 " + (
+                                                      className: "text-sm py-2 px-3 first:rounded-t border border-l-black border-r-black last:rounded-b hover:cursor-pointer hover:bg-black hover:text-white aria-selected:text-white aria-selected:bg-black transition-colors duration-500 " + (
                                                         Belt_Option.getWithDefault(Caml_option.nullable_to_opt(select.selectedItem), "") === item ? "bg-black text-white bg-opacity-60" : ""
                                                       )
                                                     }, item),
