@@ -110,7 +110,7 @@ let default = () => {
           log("Installing dependencies...");
 
           let initCmd = isReact
-            ? `yarn && yarn add @rescript/react react react-dom && yarn build`
+            ? `yarn && yarn add -D @rescript/react && yarn add -P react react-dom && yarn build`
             : `yarn && yarn build`;
 
           exec(initCmd, (err, stdout, stderr) => {
