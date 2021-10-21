@@ -16,12 +16,6 @@ Add the following to your `bsconfig.json`
 
 ```rescript
 
-/* Hooks.res ------------------------------------------------- */
-
-@module("react")
-external useMemo10: (@uncurry (unit => 'any), ('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j)) => 'any =
-  "useMemo"
-
 /* FieldSelect.res ------------------------------------------------- */
 
 open Belt
@@ -173,7 +167,7 @@ module Make = (Config: ReForm.Config) => {
         ),
       )
 
-      Hooks.useMemo10(
+      React.useMemo6(
         () =>
           fieldInterface
           ->Option.map(fieldInterface =>
@@ -197,10 +191,6 @@ module Make = (Config: ReForm.Config) => {
         (
           className,
           disabled,
-          items,
-          label,
-          placeholder,
-          renderOnMissingContext,
           select.isOpen,
           fieldInterface->Option.map(({error}) => error),
           fieldInterface->Option.map(({value}) => value),
