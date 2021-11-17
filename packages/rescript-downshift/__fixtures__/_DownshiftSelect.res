@@ -38,7 +38,7 @@ let default = () => {
     <ReactSpread props={select->getLabelProps}>
       <label className="mb-2"> {"Choose an option"->React.string} </label>
     </ReactSpread>
-    <ReactSpread props={select->getToggleButtonProps}>
+    <ReactSpread props={getToggleButtonProps(select)}>
       <button
         type_="button"
         className="flex focus:bg-black hover:bg-black focus:text-white hover:text-white items-center justify-between border duration-300 w-full   border-black rounded-md px-3 py-2 transition-all">

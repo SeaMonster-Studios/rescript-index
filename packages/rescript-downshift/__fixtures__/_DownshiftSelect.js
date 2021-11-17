@@ -54,9 +54,7 @@ function $$default(param) {
                         className: "mb-2"
                       }, "Choose an option")
                 }), React.createElement(ReactSpread.make, {
-                  props: (function (param) {
-                      return select.getToggleButtonProps(param);
-                    }),
+                  props: select.getToggleButtonProps(),
                   children: React.createElement("button", {
                         className: "flex focus:bg-black hover:bg-black focus:text-white hover:text-white items-center justify-between border duration-300 w-full   border-black rounded-md px-3 py-2 transition-all",
                         type: "button"

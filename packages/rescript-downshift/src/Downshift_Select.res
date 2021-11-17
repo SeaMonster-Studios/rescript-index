@@ -203,13 +203,16 @@ module Make = (Config: Config) => {
     highlightedIndex: int,
   }
 
-  @send @uncurry
-  external getToggleButtonProps: (t, 'a) => toggleButtonProps = "getToggleButtonProps"
+  @send
+  external getToggleButtonPropsWithOptions: (t, . 'a) => toggleButtonProps = "getToggleButtonProps"
 
-  @send @uncurry
+  @send
+  external getToggleButtonProps: t => toggleButtonProps = "getToggleButtonProps"
+
+  @send
   external getLabelProps: t => labelProps = "getLabelProps"
 
-  @send @uncurry
+  @send
   external getMenuProps: t => menuProps = "getMenuProps"
 
   type itemPropsOptions = {
@@ -217,7 +220,7 @@ module Make = (Config: Config) => {
     index: int,
   }
 
-  @send @uncurry
+  @send
   external getItemProps: (t, itemPropsOptions) => itemProps = "getItemProps"
 
   @module("downshift") @uncurry
