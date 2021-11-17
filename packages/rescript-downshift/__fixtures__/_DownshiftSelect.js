@@ -54,7 +54,9 @@ function $$default(param) {
                         className: "mb-2"
                       }, "Choose an option")
                 }), React.createElement(ReactSpread.make, {
-                  props: select.getToggleButtonProps(),
+                  props: (function (param) {
+                      return select.getToggleButtonProps(param);
+                    }),
                   children: React.createElement("button", {
                         className: "flex focus:bg-black hover:bg-black focus:text-white hover:text-white items-center justify-between border duration-300 w-full   border-black rounded-md px-3 py-2 transition-all",
                         type: "button"
@@ -68,6 +70,7 @@ function $$default(param) {
                       }, select.isOpen ? React.createElement(React.Fragment, undefined, Belt_Array.mapWithIndex(items, (function (index, item) {
                                     return React.createElement(ReactSpread.make, {
                                                 props: select.getItemProps({
+                                                      item: item,
                                                       index: index
                                                     }),
                                                 children: React.createElement("li", {

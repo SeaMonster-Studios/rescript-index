@@ -3,6 +3,7 @@ open Downshift
 
 module Select = Select.Make({
   type item = string
+  type optionType = string
 })
 
 open Select
@@ -60,7 +61,7 @@ let default = () => {
             ->Array.mapWithIndex((index, item) => {
               <ReactSpread
                 key={`${item}${index->string_of_int}`}
-                props={select->getItemProps(itemPropsOptions(~index, ()))}>
+                props={select->getItemProps({index: index, item: item})}>
                 <li
                   className={`text-sm py-2 px-3 first:rounded-t border border-l-black border-r-black last:rounded-b hover:cursor-pointer hover:bg-black hover:text-white aria-selected:text-white aria-selected:bg-black transition-colors duration-500 ${select.selectedItem
                     ->Js.Nullable.toOption

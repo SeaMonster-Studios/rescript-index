@@ -1,5 +1,81 @@
 module type Config = {
   type item
+
+  // options may not be array<item> when it's used in conjunction w/useMultipleSelection
+  type optionType
+}
+
+module StateChangeTypes = {
+  type t
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external menuKeyDownArrowDown: t = "MenuKeyDownArrowDown"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external menuKeyDownArrowUp: t = "MenuKeyDownArrowUp"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external menuKeyDownEscape: t = "MenuKeyDownEscape"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external menuKeyDownHome: t = "MenuKeyDownHome"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external menuKeyDownEnd: t = "MenuKeyDownEnd"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external menuKeyDownEnter: t = "MenuKeyDownEnter"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external menuKeyDownSpaceButton: t = "MenuKeyDownSpaceButton"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external menuKeyDownCharacter: t = "MenuKeyDownCharacter"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external menuBlur: t = "MenuBlur"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external menuMouseLeave: t = "MenuMouseLeave"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external itemMouseMove: t = "ItemMouseMove"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external itemClick: t = "ItemClick"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external toggleButtonKeyDownCharacter: t = "ToggleButtonKeyDownCharacter"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external toggleButtonKeyDownArrowDown: t = "ToggleButtonKeyDownArrowDown"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external toggleButtonKeyDownArrowUp: t = "ToggleButtonKeyDownArrowUp"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external toggleButtonClick: t = "ToggleButtonClick"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external functionToggleMenu: t = "FunctionToggleMenu"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external functionOpenMenu: t = "FunctionOpenMenu"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external functionCloseMenu: t = "FunctionCloseMenu"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external functionSetHighlightedIndex: t = "FunctionSetHighlightedIndex"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external functionSelectItem: t = "FunctionSelectItem"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external functionSetInputValue: t = "FunctionSetInputValue"
+
+  @module("downshift") @scope(("useSelect", "stateChangeTypes"))
+  external functionReset: t = "FunctionReset"
 }
 
 module Make = (Config: Config) => {
@@ -7,98 +83,35 @@ module Make = (Config: Config) => {
 		Docs: https://github.com/downshift-js/downshift/tree/master/src/hooks/useSelect
 	*/
 
-  include Config
+  type item = Config.item
 
-  type items = array<item>
-
-  type stateChangeTypes
-
-  module StateChangeTypes = {
-    type t
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external menuKeyDownArrowDown: t = "MenuKeyDownArrowDown"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external menuKeyDownArrowUp: t = "MenuKeyDownArrowUp"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external menuKeyDownEscape: t = "MenuKeyDownEscape"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external menuKeyDownHome: t = "MenuKeyDownHome"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external menuKeyDownEnd: t = "MenuKeyDownEnd"
-
-    @module("downstft") @scope(("useSelect", "stateChangeTypes"))
-    external menuKeyDownEnter: t = "MenuKeyDownEnter"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external menuKeyDownSpaceButton: t = "MenuKeyDownSpaceButton"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external menuKeyDownCharacter: t = "MenuKeyDownCharacter"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external menuBlur: t = "MenuBlur"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external menuMouseLeave: t = "MenuMouseLeave"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external itemMouseMove: t = "ItemMouseMove"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external itemClick: t = "ItemClick"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external toggleButtonKeyDownCharacter: t = "ToggleButtonKeyDownCharacter"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external toggleButtonKeyDownArrowDown: t = "ToggleButtonKeyDownArrowDown"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external toggleButtonKeyDownArrowUp: t = "ToggleButtonKeyDownArrowUp"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external toggleButtonClick: t = "ToggleButtonClick"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external functionToggleMenu: t = "FunctionToggleMenu"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external functionOpenMenu: t = "FunctionOpenMenu"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external functionCloseMenu: t = "FunctionCloseMenu"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external functionSetHighlightedIndex: t = "FunctionSetHighlightedIndex"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external functionSelectItem: t = "FunctionSelectItem"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external functionSetInputValue: t = "FunctionSetInputValue"
-
-    @module("downshift") @scope(("useSelect", "stateChangeTypes"))
-    external functionReset: t = "FunctionReset"
-  }
-
-  type changes<'changes> = Js.t<'changes>
-
-  type actionAndChanges<'changes> = {
-    changes: 'changes,
+  type changes = {
+    isOpen: option<bool>,
+    selectedItem: option<item>,
+    highlightedIndex: option<int>,
+    inputValue: option<string>,
     @as("type")
-    type_: StateChangeTypes.t,
+    type_: option<StateChangeTypes.t>,
   }
 
   type state = {
-    highlightedIndex: int,
     isOpen: bool,
     selectedItem: item,
+    highlightedIndex: int,
+    inputValue: option<string>,
     keysSoFar: string,
+  }
+
+  external changesToState: changes => state = "%identity"
+
+  type props
+
+  type actionAndChanges = {
+    changes: changes,
+    @as("type")
+    type_: StateChangeTypes.t,
+    props: props,
+    index: int,
   }
 
   type getA11yMessage = {
@@ -112,26 +125,26 @@ module Make = (Config: Config) => {
     selectedItem: item,
   }
 
-  type highlightedIndexChange<'changes> = {
-    changes: changes<'changes>,
+  type highlightedIndexChange = {
+    changes: changes,
     highlightedIndex: int,
     stateChangeTypes: StateChangeTypes.t,
   }
 
-  type isOpenChange<'changes> = {
-    changes: changes<'changes>,
+  type isOpenChange = {
+    changes: changes,
     isOpen: bool,
   }
 
-  @deriving(abstract)
-  type options<'changes, 'environment> = {
-    items: items,
+  @deriving(abstract) @uncurry
+  type options<'environment> = {
+    items: array<Config.optionType>,
     @optional
     itemToString: item => string,
     @optional
-    onSelectedItemChange: changes<'changes> => unit,
+    onSelectedItemChange: changes => unit,
     @optional
-    stateReducer: (state, actionAndChanges<'changes>) => unit,
+    stateReducer: (state, actionAndChanges) => state,
     @optional
     initialSelectedItem: item,
     @optional
@@ -149,11 +162,11 @@ module Make = (Config: Config) => {
     @optional
     getA11ySelectionMessage: getA11yMessage => string,
     @optional
-    onHighlightedIndexChange: highlightedIndexChange<'changes> => unit,
+    onHighlightedIndexChange: highlightedIndexChange => unit,
     @optional
-    onIsOpenChange: isOpenChange<'changes> => unit,
+    onIsOpenChange: isOpenChange => unit,
     @optional
-    onStateChange: changes<'changes> => unit,
+    onStateChange: changes => unit,
     @optional
     highlightedIndex: int,
     @optional
@@ -190,25 +203,23 @@ module Make = (Config: Config) => {
     highlightedIndex: int,
   }
 
-  @send
-  external getToggleButtonProps: t => toggleButtonProps = "getToggleButtonProps"
+  @send @uncurry
+  external getToggleButtonProps: (t, 'a) => toggleButtonProps = "getToggleButtonProps"
 
-  @send
+  @send @uncurry
   external getLabelProps: t => labelProps = "getLabelProps"
 
-  @send
+  @send @uncurry
   external getMenuProps: t => menuProps = "getMenuProps"
 
-  @deriving(abstract)
   type itemPropsOptions = {
-    @optional
     item: item,
     index: int,
   }
 
-  @send
+  @send @uncurry
   external getItemProps: (t, itemPropsOptions) => itemProps = "getItemProps"
 
   @module("downshift") @uncurry
-  external use: options<'changes, 'environment> => t = "useSelect"
+  external use: options<'environment> => t = "useSelect"
 }
