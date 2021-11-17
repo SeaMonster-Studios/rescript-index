@@ -1,3 +1,5 @@
+open Belt
+
 module type Config = {
   type item
 
@@ -87,7 +89,7 @@ module Make = (Config: Config) => {
 
   type changes = {
     isOpen: option<bool>,
-    selectedItem: option<item>,
+    selectedItem: Js.Nullable.t<item>,
     highlightedIndex: option<int>,
     inputValue: option<string>,
     @as("type")
@@ -96,13 +98,19 @@ module Make = (Config: Config) => {
 
   type state = {
     isOpen: bool,
-    selectedItem: item,
+    selectedItem: Js.Nullable.t<item>,
     highlightedIndex: int,
     inputValue: option<string>,
     keysSoFar: string,
   }
 
-  external changesToState: changes => state = "%identity"
+  let changesToState: (changes, state) => state = (changes, state) => {
+    isOpen: changes.isOpen->Option.getWithDefault(state.isOpen),
+    selectedItem: changes.selectedItem,
+    highlightedIndex: changes.highlightedIndex->Option.getWithDefault(state.highlightedIndex),
+    inputValue: changes.inputValue,
+    keysSoFar: state.keysSoFar,
+  }
 
   type props<'a> = Js.t<'a>
 
@@ -136,9 +144,11 @@ module Make = (Config: Config) => {
     isOpen: bool,
   }
 
+  type items = array<Config.optionType>
+
   @deriving(abstract)
   type options<'environment, 'props> = {
-    items: array<Config.optionType>,
+    items: items,
     @optional
     itemToString: item => string,
     @optional
