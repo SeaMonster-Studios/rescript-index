@@ -1,14 +1,24 @@
-type checkedT = [#mixed | #"\true" | #"\false"]
+type checkedT = [#mixed | #"true" | #"false"]
 
 let toCheckedT: string => checkedT = checked => checked->Obj.magic
 
+let toggleChecked = checked =>
+  switch checked {
+  | #mixed => #mixed
+  | #"true" => #"false"
+  | #"false" => #"true"
+  }
+
 let handleOnChange = (setState, e: ReactEvent.Mouse.t) => {
   let target = e->ReactEvent.Mouse.target
+
   setState(_ => target["checked"]->toCheckedT)
 }
 
 type props = {
+  // Only use checked or defaultChecked per documentation
   checked: option<checkedT>,
+  defaultChecked: option<checkedT>,
   onChange: ReactEvent.Mouse.t => unit,
   disabled: bool,
 }
@@ -16,7 +26,7 @@ type props = {
 type inputProps = {
   @as("aria-checked")
   ariaChecked: checkedT,
-  checked: bool,
+  checked: checkedT,
   disabled: bool,
   onChange: ReactEvent.Mouse.t => unit,
   onClick: ReactEvent.Mouse.t => unit,

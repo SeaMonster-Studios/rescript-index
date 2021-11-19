@@ -6,6 +6,16 @@ function toCheckedT(checked) {
   return checked;
 }
 
+function toggleChecked(checked) {
+  if (checked === "false") {
+    return "true";
+  } else if (checked === "mixed") {
+    return "mixed";
+  } else {
+    return "false";
+  }
+}
+
 function handleOnChange(setState, e) {
   var target = e.target;
   return Curry._1(setState, (function (param) {
@@ -47,6 +57,7 @@ var Custom = {
 
 export {
   toCheckedT ,
+  toggleChecked ,
   handleOnChange ,
   Mixed ,
   Custom ,
