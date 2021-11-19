@@ -1,6 +1,5 @@
 @react.component
 let make = (~props, ~children) => {
-  Js.log(React.Children.count(children))
   switch React.Children.count(children) == 1 {
   | true => React.cloneElement(children, props)
   | false =>

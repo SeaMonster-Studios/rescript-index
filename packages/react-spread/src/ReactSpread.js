@@ -5,6 +5,7 @@ import * as React from "react";
 function ReactSpread(Props) {
   var props = Props.props;
   var children = Props.children;
+  console.log(React.Children.count(children));
   if (React.Children.count(children) === 1) {
     return React.cloneElement(children, props);
   } else {
