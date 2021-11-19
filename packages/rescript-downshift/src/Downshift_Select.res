@@ -1,3 +1,5 @@
+open Belt
+
 module type Config = {
   type item
 
@@ -87,7 +89,7 @@ module Make = (Config: Config) => {
 
   type changes = {
     isOpen: option<bool>,
-    selectedItem: option<item>,
+    selectedItem: Js.Nullable.t<item>,
     highlightedIndex: option<int>,
     inputValue: option<string>,
     @as("type")
@@ -96,21 +98,27 @@ module Make = (Config: Config) => {
 
   type state = {
     isOpen: bool,
-    selectedItem: item,
+    selectedItem: Js.Nullable.t<item>,
     highlightedIndex: int,
     inputValue: option<string>,
     keysSoFar: string,
   }
 
-  external changesToState: changes => state = "%identity"
+  let changesToState: (changes, state) => state = (changes, state) => {
+    isOpen: changes.isOpen->Option.getWithDefault(state.isOpen),
+    selectedItem: changes.selectedItem,
+    highlightedIndex: changes.highlightedIndex->Option.getWithDefault(state.highlightedIndex),
+    inputValue: changes.inputValue,
+    keysSoFar: state.keysSoFar,
+  }
 
-  type props
+  type props<'a> = Js.t<'a>
 
-  type actionAndChanges = {
+  type actionAndChanges<'p> = {
     changes: changes,
     @as("type")
     type_: StateChangeTypes.t,
-    props: props,
+    props: props<'p>,
     index: int,
   }
 
@@ -136,15 +144,17 @@ module Make = (Config: Config) => {
     isOpen: bool,
   }
 
-  @deriving(abstract) @uncurry
-  type options<'environment> = {
-    items: array<Config.optionType>,
+  type items = array<Config.optionType>
+
+  @deriving(abstract)
+  type options<'environment, 'props> = {
+    items: items,
     @optional
     itemToString: item => string,
     @optional
     onSelectedItemChange: changes => unit,
     @optional
-    stateReducer: (state, actionAndChanges) => state,
+    stateReducer: (state, 'props) => state,
     @optional
     initialSelectedItem: item,
     @optional
@@ -189,14 +199,6 @@ module Make = (Config: Config) => {
     circularNavigation: bool,
   }
 
-  type toggleButtonProps
-
-  type labelProps
-
-  type menuProps
-
-  type itemProps
-
   type t = {
     isOpen: bool,
     selectedItem: Js.Nullable.t<item>,
@@ -204,16 +206,22 @@ module Make = (Config: Config) => {
   }
 
   @send
-  external getToggleButtonPropsWithOptions: (t, . 'a) => toggleButtonProps = "getToggleButtonProps"
+  external getToggleButtonPropsWithOptions: (t, 'a) => props<'p> = "getToggleButtonProps"
 
   @send
-  external getToggleButtonProps: t => toggleButtonProps = "getToggleButtonProps"
+  external getToggleButtonProps: t => props<'p> = "getToggleButtonProps"
 
   @send
-  external getLabelProps: t => labelProps = "getLabelProps"
+  external getLabelPropsWithOptions: (t, 'a) => props<'p> = "getLabelProps"
 
   @send
-  external getMenuProps: t => menuProps = "getMenuProps"
+  external getLabelProps: t => props<'p> = "getLabelProps"
+
+  @send
+  external getMenuPropsWithOptions: (t, 'a) => props<'p> = "getMenuProps"
+
+  @send
+  external getMenuProps: t => props<'p> = "getMenuProps"
 
   type itemPropsOptions = {
     item: item,
@@ -221,8 +229,8 @@ module Make = (Config: Config) => {
   }
 
   @send
-  external getItemProps: (t, itemPropsOptions) => itemProps = "getItemProps"
+  external getItemProps: (t, itemPropsOptions) => props<'p> = "getItemProps"
 
   @module("downshift") @uncurry
-  external use: options<'environment> => t = "useSelect"
+  external use: options<'environment, 'props> => t = "useSelect"
 }
