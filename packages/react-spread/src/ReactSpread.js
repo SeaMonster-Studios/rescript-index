@@ -3,7 +3,14 @@
 import * as React from "react";
 
 function ReactSpread(Props) {
-  return React.cloneElement(Props.children, Props.props);
+  var props = Props.props;
+  var children = Props.children;
+  if (React.Children.count(children) === 1) {
+    return React.cloneElement(children, props);
+  } else {
+    console.error("ReactSpread must have exactly 1 child. This child must be a native HTML element, not a React component (Example: `<input />`, not `<Input />`)");
+    return null;
+  }
 }
 
 var make = ReactSpread;
