@@ -4,12 +4,13 @@
   "version": "0.0.1",
   "sources": [
     { "dir": "src", "subdirs": true },
-    { "dir": "__fixtures__", "subdirs": true }
+    { "dir": "__fixtures__", "type": "dev", "subdirs": true }
   ],
   "reason": { "react-jsx": 3 },
   "package-specs": { "module": "es6", "in-source": true },
   "suffix": ".js",
-  "bs-dependencies": ["@rescript/react", "@seamonster-studios/react-spread"],
+  "bs-dependencies": ["@rescript/react"],
+  "bs-dev-dependencies": ["@seamonster-studios/react-spread"],
   "namespace": false,
   "warnings": { "error": "+101" },
   "external-stdlib": "@rescript/std"

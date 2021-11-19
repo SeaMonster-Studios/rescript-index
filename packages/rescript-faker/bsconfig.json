@@ -9,6 +9,7 @@
     },
     {
       "dir": "__fixtures__",
+      "type": "dev",
       "subdirs": true
     }
   ],
@@ -20,8 +21,7 @@
     "in-source": true
   },
   "suffix": ".js",
-  "bs-dependencies": [
-  ],
+  "bs-dependencies": [],
   "namespace": false,
   "warnings": {
     "error": "+101"
