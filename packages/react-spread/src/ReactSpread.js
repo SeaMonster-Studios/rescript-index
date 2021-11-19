@@ -8,7 +8,7 @@ function ReactSpread(Props) {
   if (React.Children.count(children) === 1) {
     return React.cloneElement(children, props);
   } else {
-    console.error("ReactSpread must have exactly 1 child. This child must be a native HTML element, not a React component (Example: `<input />`, not `<Input />`)");
+    console.error("RESCRIPT INDEX:: ReactSpread must have exactly 1 child. This child must be a native HTML element, not a React component (Example: `<input />`, not `<Input />`)");
     return null;
   }
 }
