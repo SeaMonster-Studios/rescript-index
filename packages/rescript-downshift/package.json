@@ -2,7 +2,7 @@
   "name": "@seamonster-studios/rescript-downshift",
   "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/main/packages/rescript-downshift",
   "main": "src/Downshift.js",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "author": "SeaMonster Studios Engineering",
   "scripts": {
     "build": "rescript build",
@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@rescript/std": "^9.1.3",
-    "@seamonster-studios/react-spread": "^1.1.6",
+    "@seamonster-studios/react-spread": "^1.1.7",
     "downshift": "^6.1.7"
   },
   "peerDependencies": {
