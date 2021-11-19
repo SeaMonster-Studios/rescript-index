@@ -2,7 +2,7 @@
   "name": "@seamonster-studios/rescript-lodashsortby",
   "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/main/packages/rescript-lodashsortby",
   "main": "src/package.json.js",
-  "version": "1.1.4",
+  "version": "1.1.8",
   "private": false,
   "author": "SeaMonster Studios Engineering",
   "scripts": {

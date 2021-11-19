@@ -2,7 +2,7 @@
   "name": "@seamonster-studios/rescript-reach-checkbox",
   "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/main/packages/rescript-reach-checkbox",
   "main": "src/ReachCheckbox.js",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "author": "SeaMonster Studios Engineering",
   "scripts": {
     "build": "rescript build",
