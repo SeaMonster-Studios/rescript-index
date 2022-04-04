@@ -7,8 +7,8 @@ external make: unit => t = "moment-timezone"
 @module
 external ofString: string => t = "moment-timezone"
 
-@module
-external ofMoment: t => t = "moment-timezone"
+@send
+external clone: t => t = "clone"
 
 @send
 external tz: (t, string) => t = "tz"
