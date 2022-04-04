@@ -97,4 +97,4 @@ external ofTimezone: (string, string) => t = "tz"
 let ofTimezone = (~date, ~timezone) => ofTimezone(date, timezone)
 
 @module("moment-timezone") @scope("tz")
-external getTzNames: unit => array<string> = "names"
+external getTimezoneNames: unit => array<string> = "names"
