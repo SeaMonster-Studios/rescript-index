@@ -5,7 +5,13 @@ type t
 external make: unit => t = "moment-timezone"
 
 @module
-external ofString: string => t = "moment-timezone"
+external fromString: string => t = "moment-timezone"
+
+@module
+external fromDate: Js.Date.t => t = "moment-timezone"
+
+@module
+external fromFloat: float => t = "moment-timezone"
 
 @send
 external clone: t => t = "clone"
@@ -63,7 +69,7 @@ external getHour: t => int = "hour"
 @send
 external getMinute: t => int = "minute"
 
-@send 
+@send
 external setMonth: (t, int) => unit = "month"
 
 @scope("tz") @set
