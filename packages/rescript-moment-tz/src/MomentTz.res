@@ -14,7 +14,7 @@ external fromDate: Js.Date.t => t = "moment-timezone"
 external fromFloat: float => t = "moment-timezone"
 
 @val @module("moment-timezone")
-external fromUnix: float => MomentTz.t = "unix"
+external fromUnix: float => t = "unix"
 
 @send
 external clone: t => t = "clone"
