@@ -10,11 +10,18 @@
     "dev": "cross-env FAST_REFRESH=false cosmos",
     "build:packages": "lerna run build",
     "build:cosmos": "FAST_REFRESH=false cosmos-export",
-    "build": "npm-run-all bootstrap build:packages build:cosmos",
+    "build": "npm-run-all -s bootstrap:lerna build:packages build:cosmos",
     "serve": "npx serve cosmos-export",
-    "bootstrap": "rm -rf node_modules && yarn && lerna clean -y && lerna bootstrap",
+    "bootstrap": "npm-run-all -s bootstrap:yarn bootstrap:lerna",
+    "bootstrap:yarn": "yarn",
+    "bootstrap:lerna": "lerna bootstrap --use-workspaces",
     "deploy": "lerna publish",
-    "clean": "lerna run clean && rm -rf ./cosmos-export"
+    "clean": "npm-run-all -s clean:packages clean:cosmos",
+    "clean:lerna": "lerna clean -y",
+    "clean:cosmos": "rm -rf ./cosmos-export",
+    "clean:root": "rm -rf ./node_modules",
+    "clean:packages": "lerna run clean",
+    "reset": "npm-run-all -s clean:root bootstrap:yarn clean:lerna bootstrap:lerna"
   },
   "license": "MIT",
   "keywords": [
