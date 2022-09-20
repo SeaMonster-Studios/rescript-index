@@ -11,6 +11,7 @@
   "suffix": ".js",
   "bs-dependencies": ["@rescript/react"],
   "bs-dev-dependencies": ["@seamonster-studios/react-spread"],
+  "pinned-dependencies": ["@seamonster-studios/react-spread"],
   "namespace": false,
   "warnings": { "error": "+101" },
   "external-stdlib": "@rescript/std"

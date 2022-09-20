@@ -5,7 +5,7 @@
   "version": "0.0.0",
   "author": "SeaMonster Studios Engineering",
   "scripts": {
-    "build": "rescript build -with-deps",
+    "build": "rescript build",
     "clean": "rescript clean",
     "dev": "rescript build -w",
     "deploy": "cd ../../ && yarn deploy"

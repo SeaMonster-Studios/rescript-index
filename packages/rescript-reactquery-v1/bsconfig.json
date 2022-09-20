@@ -26,6 +26,10 @@
     "@seamonster-studios/use-previous",
     "@seamonster-studios/rescript-lodashisequal"
   ],
+  "pinned-dependencies": [
+    "@seamonster-studios/use-previous",
+    "@seamonster-studios/rescript-lodashisequal"
+  ],
   "namespace": false,
   "warnings": {
     "error": "+101"

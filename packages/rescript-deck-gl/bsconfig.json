@@ -13,6 +13,9 @@
     "@rescript/react",
     "@seamonster-studios/rescript-react-map-gl"
   ],
+  "pinned-dependencies": [
+    "@seamonster-studios/rescript-react-map-gl"
+  ],
   "namespace": false,
   "warnings": { "error": "+101" },
   "external-stdlib": "@rescript/std"
