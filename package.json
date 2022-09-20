@@ -8,13 +8,13 @@
   "scripts": {
     "make": "node ./bin/make-package",
     "dev": "cross-env FAST_REFRESH=false cosmos",
-    "build:packages": "node ./bin/build-packages",
+    "build:packages": "lerna run build",
     "build:cosmos": "FAST_REFRESH=false cosmos-export",
-    "build": "run-s build:packages build:cosmos",
+    "build": "npm-run-all bootstrap build:packages build:cosmos",
     "serve": "npx serve cosmos-export",
-    "bootstrap": "./node_modules/.bin/lerna bootstrap",
-    "deploy": "./node_modules/.bin/lerna publish",
-    "clean": "rm -rf ./cosmos-export"
+    "bootstrap": "rm -rf node_modules && yarn && lerna clean -y && lerna bootstrap",
+    "deploy": "lerna publish",
+    "clean": "lerna run clean && rm -rf ./cosmos-export"
   },
   "license": "MIT",
   "keywords": [
