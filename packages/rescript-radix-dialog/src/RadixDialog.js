@@ -3,8 +3,29 @@
 
 var Root = {};
 
+var Trigger = {};
+
+var Portal = {};
+
+var Overlay = {};
+
+var Content = {};
+
+var Close = {};
+
+var Title = {};
+
+var Description = {};
+
 export {
   Root ,
+  Trigger ,
+  Portal ,
+  Overlay ,
+  Content ,
+  Close ,
+  Title ,
+  Description ,
   
 }
 /* No side effect */
