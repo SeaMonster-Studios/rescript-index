@@ -14,14 +14,14 @@ A monorepo that contains bindings and reusable components across projects
 
 ## Table of Contents
 
-1. [Installation](#Installation)
-2. [Creating a new package](#Creating-a-new-package)
-3. [Developing and Deploying Packages](#Developing-and-Deploying-Packages)
-4. [Documenting your package](#Documenting-your-package)
-5. [Adding dependencies to a package](#Adding-dependencies-to-a-package)
-6. [Adding other ReScript Index packages to a package](Adding-other-ReScript-Index-packages-to-a-package)
-7. [Setting up the Package to be used within a JavaScript Project](#Setting-up-the-Package-to-be-used-within-a-JavaScript-Project)
-8. [Using Packages in this Repo within a JavaScript Project](#Using-Packages-in-this-Repo-within-a-JavaScript-Project)
+1. [Installation](#installation)
+2. [Creating a new package](#creating-a-new-package)
+3. [Developing and Deploying Packages](#developing-and-deploying-packages)
+4. [Documenting your package](#documenting-your-package)
+5. [Adding dependencies to a package](#adding-dependencies-to-a-package)
+6. [Adding other ReScript Index packages to a package](#adding-other-rescript-index-packages-to-a-package)
+7. [Setting up the Package to be used within a JavaScript Project](#setting-up-the-package-to-be-used-within-a-javascript-project)
+8. [Using Packages in this Repo within a JavaScript Project](#using-packages-in-this-repo-within-a-javascript-project)
 
 ## Installation
 
