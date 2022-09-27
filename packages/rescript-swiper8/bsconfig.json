@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/rescript-lang/rescript-compiler/master/docs/docson/build-schema.json",
+  "name": "@seamonster-studios/rescript-swiper8",
+  "version": "0.0.1",
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    },
+    {
+      "dir": "__fixtures__",
+      "type": "dev",
+      "subdirs": true
+    }
+  ],
+  "reason": {
+    "react-jsx": 3
+  },
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  },
+  "suffix": ".js",
+  "bs-dependencies": [
+    "@rescript/react"
+  ],
+  "namespace": false,
+  "warnings": {
+    "error": "+101"
+  },
+  "external-stdlib": "@rescript/std"
+}
