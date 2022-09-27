@@ -53,7 +53,7 @@ function $$default(param) {
                           return React.createElement(React$1.SwiperSlide, {
                                       children: React.createElement("div", {
                                             tabIndex: 0
-                                          }, React.createElement("h1", {
+                                          }, React.createElement("h2", {
                                                 className: "text-xl font-bold"
                                               }, post.title), React.createElement("p", {
                                                 dangerouslySetInnerHTML: {

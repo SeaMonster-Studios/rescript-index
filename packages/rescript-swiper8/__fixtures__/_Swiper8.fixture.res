@@ -65,7 +65,7 @@ let default = () => {
       ->Array.map(post => {
         <Swiper8.Slide>
           <div tabIndex=0>
-            <h1 className="text-xl font-bold"> {post.title->React.string} </h1>
+            <h2 className="text-xl font-bold"> {post.title->React.string} </h2>
             <p dangerouslySetInnerHTML={"__html": post.excerpt} />
             <a className="underline" href={post.url}> {"Read more"->React.string} </a>
           </div>

@@ -16,8 +16,10 @@ export function fixA11y(swiper) {
     let slideIsFullyVisible = index >= currentSlideIndex && index <= lastFullyVisibleSlideIndex
     if (!slideIsFullyVisible) {
       slide.setAttribute("inert", "");
+      slide.setAttribute("aria-hidden", "true");
     } else {
       slide.removeAttribute("inert");
+      slide.removeAttribute("aria-hidden");
     }
   });
 }
