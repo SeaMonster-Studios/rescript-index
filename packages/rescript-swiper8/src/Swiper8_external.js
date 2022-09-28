@@ -7,7 +7,6 @@ import "wicg-inert"
  * buttons for navigating to next/previous slides. 
  */
 export function fixA11y(swiper) {
-  console.log(swiper.slides)
   let currentSlideEl = swiper.slides[swiper.activeIndex]
   let currentSlideIndex = swiper.slides.indexOf(currentSlideEl)
   let numFullyVisibleSlides = Math.trunc(swiper.params.slidesPerView)
