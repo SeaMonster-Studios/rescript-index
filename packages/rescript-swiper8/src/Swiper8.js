@@ -61,6 +61,7 @@ function Swiper8(Props) {
   var onAfterInit = Props.onAfterInit;
   var onRealIndexChange = Props.onRealIndexChange;
   var a11y = Props.a11y;
+  var centeredSlides = Props.centeredSlides;
   useSwiperA11yWorkaround(swiperRef);
   var tmp = {
     children: children,
@@ -125,6 +126,9 @@ function Swiper8(Props) {
   }
   if (a11y !== undefined) {
     tmp.a11y = a11y;
+  }
+  if (centeredSlides !== undefined) {
+    tmp.centeredSlides = centeredSlides;
   }
   return React.createElement(React$1.Swiper, tmp);
 }

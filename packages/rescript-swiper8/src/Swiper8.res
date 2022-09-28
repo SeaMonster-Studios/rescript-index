@@ -43,6 +43,7 @@ module SwiperReact = {
     ~onAfterInit: t => unit=?,
     ~onRealIndexChange: t => unit=?,
     ~a11y: bool=?,
+    ~centeredSlides: bool=?,
   ) => React.element = "Swiper"
 }
 
@@ -105,6 +106,7 @@ let make = (
   ~onAfterInit: option<t => unit>=?,
   ~onRealIndexChange: option<t => unit>=?,
   ~a11y: option<bool>=?,
+  ~centeredSlides: option<bool>=?,
 ) => {
   A11y.useSwiperA11yWorkaround(~swiperRef)
 
@@ -113,6 +115,7 @@ let make = (
     ?allowTouchMove
     ?autoHeight
     ?loop
+    ?centeredSlides
     ref={ReactDOM.Ref.domRef(swiperRef)}
     ?slidesPerView
     ?slidesOffsetBefore
