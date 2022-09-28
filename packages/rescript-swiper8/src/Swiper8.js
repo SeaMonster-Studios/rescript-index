@@ -48,6 +48,7 @@ function Swiper8(Props) {
   var loop = Props.loop;
   var swiperRef = Props.swiperRef;
   var slidesPerView = Props.slidesPerView;
+  var slidesOffsetBefore = Props.slidesOffsetBefore;
   var spaceBetween = Props.spaceBetween;
   var tag = Props.tag;
   var wrapperTag = Props.wrapperTag;
@@ -91,6 +92,9 @@ function Swiper8(Props) {
   }
   if (slidesPerView !== undefined) {
     tmp.slidesPerView = slidesPerView;
+  }
+  if (slidesOffsetBefore !== undefined) {
+    tmp.slidesOffsetBefore = slidesOffsetBefore;
   }
   if (spaceBetween !== undefined) {
     tmp.spaceBetween = spaceBetween;

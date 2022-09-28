@@ -30,6 +30,7 @@ module SwiperReact = {
     ~loop: bool=?,
     ~ref: ReactDOM.domRef,
     ~slidesPerView: float=?,
+    ~slidesOffsetBefore: int=?,
     ~spaceBetween: int=?,
     ~tag: string=?,
     ~wrapperTag: string=?,
@@ -91,6 +92,7 @@ let make = (
   ~loop: option<bool>=?,
   ~swiperRef: React.ref<Js.Nullable.t<Dom.element>>,
   ~slidesPerView: option<float>=?,
+  ~slidesOffsetBefore: option<int>=?,
   ~spaceBetween: option<int>=?,
   ~tag: option<string>=?,
   ~wrapperTag: option<string>=?,
@@ -113,6 +115,7 @@ let make = (
     ?loop
     ref={ReactDOM.Ref.domRef(swiperRef)}
     ?slidesPerView
+    ?slidesOffsetBefore
     ?spaceBetween
     ?tag
     ?wrapperTag
