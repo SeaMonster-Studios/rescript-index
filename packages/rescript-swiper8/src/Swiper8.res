@@ -1,3 +1,21 @@
+type swiperModule
+
+module Pagination = {
+  @module("swiper") external pagination: swiperModule = "Pagination"
+
+  @deriving(abstract)
+  type config = {
+    @optional
+    clickable: bool,
+    @optional
+    type_: string,
+    @optional
+    bulletClass: string,
+    @optional
+    bulletActiveClass: string,
+  }
+}
+
 type t
 
 type params = {loop: bool}
@@ -44,6 +62,8 @@ module SwiperReact = {
     ~onRealIndexChange: t => unit=?,
     ~a11y: bool=?,
     ~centeredSlides: bool=?,
+    ~modules: array<swiperModule>=?,
+    ~pagination: Pagination.config=?,
   ) => React.element = "Swiper"
 }
 
@@ -60,12 +80,12 @@ type component
 
 module A11y = {
   /*
-   * For some reason, in the `onInit` event, swiper.slides does not contain all
-   * of the expected slides. This causes our accessibility hack/fix
-   * Swiper8.fixA11y, to break.  But the swiper reference in the `onSlideChange`
-   * event does have a swiper.slides that gives us all the expected slides.  So
-   * here we're just forcing an `onSlideChange` event on initialization by
-   * "sliding" to the first slide.
+   * For some reason, in the `onInit` event, swiper.slides might not contain all
+   * of the expected slides. This causes our accessibility hack/fix to break.
+   * But the swiper reference in the `onSlideChange` event does have a
+   * swiper.slides that gives us all the expected slides.  So here we're just
+   * forcing an `onSlideChange` event on initialization by "sliding" to the first
+   * slide.
    */
   let useSwiperA11yWorkaround = (~swiperRef: React.ref<Js.Nullable.t<Dom.element>>) => {
     React.useEffect1(() => {
@@ -107,6 +127,8 @@ let make = (
   ~onRealIndexChange: option<t => unit>=?,
   ~a11y: option<bool>=?,
   ~centeredSlides: option<bool>=?,
+  ~modules: option<array<swiperModule>>=?,
+  ~pagination: option<Pagination.config>=?,
 ) => {
   A11y.useSwiperA11yWorkaround(~swiperRef)
 
@@ -125,6 +147,8 @@ let make = (
     ?\"aria-label"
     ?onInit
     ?onSwiper
+    ?modules
+    ?pagination
     onSlideChange={swiper => {
       A11y.fixA11y(swiper)
       onSlideChange->Belt.Option.forEach(f => f(swiper))

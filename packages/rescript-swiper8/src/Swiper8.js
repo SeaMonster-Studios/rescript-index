@@ -7,6 +7,8 @@ import * as Caml_option from "@rescript/std/lib/es6/caml_option.js";
 import * as React$1 from "swiper/react";
 import * as Swiper8_externalJs from "./Swiper8_external.js";
 
+var Pagination = {};
+
 var SwiperReact = {};
 
 var Slide = {};
@@ -62,6 +64,8 @@ function Swiper8(Props) {
   var onRealIndexChange = Props.onRealIndexChange;
   var a11y = Props.a11y;
   var centeredSlides = Props.centeredSlides;
+  var modules = Props.modules;
+  var pagination = Props.pagination;
   useSwiperA11yWorkaround(swiperRef);
   var tmp = {
     children: children,
@@ -130,12 +134,19 @@ function Swiper8(Props) {
   if (centeredSlides !== undefined) {
     tmp.centeredSlides = centeredSlides;
   }
+  if (modules !== undefined) {
+    tmp.modules = Caml_option.valFromOption(modules);
+  }
+  if (pagination !== undefined) {
+    tmp.pagination = Caml_option.valFromOption(pagination);
+  }
   return React.createElement(React$1.Swiper, tmp);
 }
 
 var make = Swiper8;
 
 export {
+  Pagination ,
   SwiperReact ,
   Slide ,
   A11y ,
