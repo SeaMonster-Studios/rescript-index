@@ -8,7 +8,7 @@ module Pagination = {
     @optional
     clickable: bool,
     @optional
-    type_: string,
+    \"type": string,
     @optional
     bulletClass: string,
     @optional
