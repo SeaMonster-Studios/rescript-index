@@ -27,6 +27,7 @@ external make: (
   ~onSlideChange: t => unit=?,
   ~onSlideChangeTransitionEnd: t => unit=?,
   ~onProgress: t => unit=?,
+  ~onAfterInit: t => unit=?,
   ~onRealIndexChange: t => unit=?,
   ~a11y: bool=?,
 ) => React.element = "Swiper"
