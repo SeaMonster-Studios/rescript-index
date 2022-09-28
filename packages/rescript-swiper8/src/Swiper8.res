@@ -27,6 +27,8 @@ external slideNext: t => unit = "slideNext"
 @send
 external slideTo: (t, int) => unit = "slideTo"
 @send
+external slideToClosest: t => unit = "slideToClosest"
+@send
 external slideToLoop: (t, int) => unit = "slideToLoop"
 @get
 external getActiveIndex: t => int = "activeIndex"
@@ -90,11 +92,7 @@ module A11y = {
   let useSwiperA11yWorkaround = (~swiperRef: React.ref<Js.Nullable.t<Dom.element>>) => {
     React.useEffect1(() => {
       let swiper = swiperRef.current->getFromDom
-      swiper->Belt.Option.forEach(swiper => {
-        let swiperParams = swiper->getParams
-        let slideTo = swiperParams.loop ? slideToLoop : slideTo
-        swiper->slideTo(0)
-      })
+      swiper->Belt.Option.forEach(swiper => swiper->slideToClosest)
       None
     }, [swiperRef.current])
   }
