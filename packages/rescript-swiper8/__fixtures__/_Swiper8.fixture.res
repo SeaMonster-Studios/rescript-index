@@ -39,7 +39,7 @@ let default = () => {
     <button
       ariaControls="swiper-example"
       className="inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-      onClick={_ => swiperRef.current->Obj.magic->Swiper8.slidePrev}>
+      onClick={_ => swiperRef.current->Swiper8.getFromDom->Option.forEach(Swiper8.slidePrev)}>
       {"Prev"->React.string}
     </button>
     <Swiper8
@@ -51,16 +51,7 @@ let default = () => {
       spaceBetween=20
       slidesPerView=3.5
       autoHeight=true
-      ref={ReactDOM.Ref.domRef(swiperRef)}
-      onInit={swiper => {
-        Swiper8.fixA11y(swiper)
-      }}
-      onSlideChange={swiper => {
-        Swiper8.fixA11y(swiper)
-      }}
-      onSlideChangeTransitionEnd={swiper => {
-        Swiper8.fixA11y(swiper)
-      }}>
+      swiperRef>
       {posts
       ->Array.map(post => {
         <Swiper8.Slide>
@@ -76,7 +67,7 @@ let default = () => {
     <button
       ariaControls="swiper-example"
       className="inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-      onClick={_ => swiperRef.current->Obj.magic->Swiper8.slideNext}>
+      onClick={_ => swiperRef.current->Swiper8.getFromDom->Option.forEach(Swiper8.slideNext)}>
       {"Next"->React.string}
     </button>
   </div>

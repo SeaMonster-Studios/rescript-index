@@ -3,6 +3,8 @@
 import * as React from "react";
 import * as Swiper8 from "../src/Swiper8.js";
 import * as Belt_Array from "@rescript/std/lib/es6/belt_Array.js";
+import * as Belt_Option from "@rescript/std/lib/es6/belt_Option.js";
+import * as Caml_option from "@rescript/std/lib/es6/caml_option.js";
 import * as React$1 from "swiper/react";
 
 import "swiper/swiper.min.css"
@@ -44,10 +46,12 @@ function $$default(param) {
                   "aria-controls": "swiper-example",
                   className: "inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2",
                   onClick: (function (param) {
-                      swiperRef.current.swiper.slidePrev();
-                      
+                      return Belt_Option.forEach(Caml_option.nullable_to_opt(swiperRef.current.swiper), (function (prim) {
+                                    prim.slidePrev();
+                                    
+                                  }));
                     })
-                }, "Prev"), React.createElement(React$1.Swiper, {
+                }, "Prev"), React.createElement(Swiper8.make, {
                   id: "swiper-example",
                   children: Belt_Array.map(posts, (function (post) {
                           return React.createElement(React$1.SwiperSlide, {
@@ -68,20 +72,19 @@ function $$default(param) {
                   allowTouchMove: true,
                   autoHeight: true,
                   loop: true,
-                  ref: swiperRef,
+                  swiperRef: swiperRef,
                   slidesPerView: 3.5,
                   spaceBetween: 20,
                   tag: "section",
-                  "aria-label": "Example Content",
-                  onInit: Swiper8.fixA11y,
-                  onSlideChange: Swiper8.fixA11y,
-                  onSlideChangeTransitionEnd: Swiper8.fixA11y
+                  "aria-label": "Example Content"
                 }), React.createElement("button", {
                   "aria-controls": "swiper-example",
                   className: "inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2",
                   onClick: (function (param) {
-                      swiperRef.current.swiper.slideNext();
-                      
+                      return Belt_Option.forEach(Caml_option.nullable_to_opt(swiperRef.current.swiper), (function (prim) {
+                                    prim.slideNext();
+                                    
+                                  }));
                     })
                 }, "Next"));
 }
