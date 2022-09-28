@@ -15,8 +15,15 @@ function useSwiperA11yWorkaround(swiperRef) {
   React.useEffect((function () {
           var swiper = swiperRef.current.swiper;
           Belt_Option.forEach((swiper == null) ? undefined : Caml_option.some(swiper), (function (swiper) {
-                  swiper.slideTo(swiper.activeIndex);
-                  
+                  var swiperParams = swiper.params;
+                  var slideTo = swiperParams.loop ? (function (prim0, prim1) {
+                        prim0.slideToLoop(prim1);
+                        
+                      }) : (function (prim0, prim1) {
+                        prim0.slideTo(prim1);
+                        
+                      });
+                  return Curry._2(slideTo, swiper, 0);
                 }));
           
         }), [swiperRef.current]);
