@@ -2,7 +2,7 @@
   "name": "@seamonster-studios/rescript-lodashuniq",
   "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/main/packages/rescript-lodashuniq",
   "main": "src/package.json.js",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "private": false,
   "author": "SeaMonster Studios Engineering",
   "scripts": {

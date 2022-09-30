@@ -2,7 +2,7 @@
   "name": "@seamonster-studios/rescript-lodashisequal",
   "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/main/packages/rescript-lodashisequal",
   "main": "src/package.json.js",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "private": false,
   "author": "SeaMonster Studios Engineering",
   "scripts": {
