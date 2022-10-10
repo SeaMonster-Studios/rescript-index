@@ -1,0 +1,35 @@
+{
+  "name": "@seamonster-studios/rescript-number-input",
+  "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/main/packages/rescript-number-input",
+  "main": "src/NumberInput.js",
+  "version": "0.0.0",
+  "author": "SeaMonster Studios Engineering",
+  "scripts": {
+    "build": "rescript build -with-deps",
+    "clean": "rescript clean",
+    "dev": "rescript build -w",
+    "deploy": "cd ../../ && yarn deploy"
+  },
+  "keywords": [
+    "rescript"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@rescript/react": "^0.10.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rescript": "^9.1.3"
+  },
+  "dependencies": {
+    "@rescript/std": "^9.1.3",
+    "react-aria": "^3.19.0",
+    "react-stately": "^3.17.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
