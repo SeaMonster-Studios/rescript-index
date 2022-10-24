@@ -9,7 +9,7 @@ import "wicg-inert"
 export function fixA11y(swiper) {
   let currentSlideEl = swiper.slides[swiper.activeIndex]
   let currentSlideIndex = swiper.slides.indexOf(currentSlideEl)
-  let numFullyVisibleSlides = Math.trunc(swiper.params.slidesPerView)
+  let numFullyVisibleSlides = Math.ceil(swiper.params.slidesPerView)
   let lastFullyVisibleSlideIndex = currentSlideIndex + numFullyVisibleSlides - 1
 
   swiper.slides.forEach((slide, index) => {
