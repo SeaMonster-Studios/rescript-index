@@ -4,10 +4,12 @@ import * as React from "react";
 import * as Swiper8 from "../src/Swiper8.js";
 import * as Belt_Array from "@rescript/std/lib/es6/belt_Array.js";
 import * as Belt_Option from "@rescript/std/lib/es6/belt_Option.js";
-import * as Caml_option from "@rescript/std/lib/es6/caml_option.js";
 import * as React$1 from "swiper/react";
 
 import "swiper/swiper.min.css"
+;
+
+import "wicg-inert"
 ;
 
 var posts = [
@@ -46,42 +48,64 @@ function $$default(param) {
                   "aria-controls": "swiper-example",
                   className: "inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2",
                   onClick: (function (param) {
-                      return Belt_Option.forEach(Caml_option.nullable_to_opt(swiperRef.current.swiper), (function (prim) {
+                      return Belt_Option.forEach(Swiper8.getFromDom(swiperRef.current), (function (prim) {
                                     prim.slidePrev();
                                     
                                   }));
                     })
-                }, "Prev"), React.createElement(Swiper8.make, {
+                }, "Prev"), React.createElement(React$1.Swiper, {
                   id: "swiper-example",
                   children: Belt_Array.map(posts, (function (post) {
                           return React.createElement(React$1.SwiperSlide, {
-                                      children: React.createElement("div", {
-                                            tabIndex: 0
-                                          }, React.createElement("h2", {
-                                                className: "text-xl font-bold"
-                                              }, post.title), React.createElement("p", {
-                                                dangerouslySetInnerHTML: {
-                                                  __html: post.excerpt
-                                                }
-                                              }), React.createElement("a", {
-                                                className: "underline",
-                                                href: post.url
-                                              }, "Read more"))
+                                      children: (function (props) {
+                                          var el = React.createElement("div", {
+                                                "aria-hidden": !props.isVisible,
+                                                className: "swiper-slide-contents",
+                                                tabIndex: 0
+                                              }, React.createElement("div", undefined, "Active: " + (
+                                                    props.isVisible ? "true" : "false"
+                                                  )), React.createElement("h2", {
+                                                    className: "text-xl font-bold"
+                                                  }, post.title), React.createElement("p", {
+                                                    dangerouslySetInnerHTML: {
+                                                      __html: post.excerpt
+                                                    }
+                                                  }), React.createElement("a", {
+                                                    className: "underline",
+                                                    href: post.url
+                                                  }, "Read more"));
+                                          if (props.isVisible) {
+                                            return el;
+                                          } else {
+                                            return React.cloneElement(el, {
+                                                        inert: ""
+                                                      });
+                                          }
+                                        })
                                     });
                         })),
                   allowTouchMove: true,
                   autoHeight: true,
                   loop: true,
-                  swiperRef: swiperRef,
+                  ref: swiperRef,
                   slidesPerView: 3.5,
                   spaceBetween: 20,
                   tag: "section",
-                  "aria-label": "Example Content"
+                  "aria-label": "Example Content",
+                  onSlideNextTransitionEnd: (function (swiper) {
+                      var visibleSlides = swiper.visibleSlides;
+                      var lastVisibleSlide = Belt_Array.get(visibleSlides, visibleSlides.length - 1 | 0);
+                      return Belt_Option.forEach(lastVisibleSlide, (function (slide) {
+                                    var contentEl = slide.firstChild;
+                                    return contentEl.focus();
+                                  }));
+                    }),
+                  watchSlidesProgress: true
                 }), React.createElement("button", {
                   "aria-controls": "swiper-example",
                   className: "inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2",
                   onClick: (function (param) {
-                      return Belt_Option.forEach(Caml_option.nullable_to_opt(swiperRef.current.swiper), (function (prim) {
+                      return Belt_Option.forEach(Swiper8.getFromDom(swiperRef.current), (function (prim) {
                                     prim.slideNext();
                                     
                                   }));
