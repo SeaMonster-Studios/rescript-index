@@ -2,7 +2,7 @@
   "name": "@seamonster-studios/rescript-radix-dialog",
   "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/main/packages/rescript-radix-dialog",
   "main": "src/RescriptRadixDialog.js",
-  "version": "1.8.0",
+  "version": "1.8.3",
   "author": "SeaMonster Studios Engineering",
   "scripts": {
     "build": "rescript build -with-deps",

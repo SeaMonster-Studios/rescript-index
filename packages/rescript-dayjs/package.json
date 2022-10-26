@@ -2,7 +2,7 @@
   "name": "@seamonster-studios/rescript-dayjs",
   "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/main/packages/rescript-dayjs",
   "main": "src/Dayjs.js",
-  "version": "1.8.0",
+  "version": "1.8.3",
   "private": false,
   "author": "SeaMonster Studios Engineering",
   "scripts": {
