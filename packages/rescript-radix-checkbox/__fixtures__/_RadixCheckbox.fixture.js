@@ -13,7 +13,6 @@ function $$default(param) {
                   id: "the-checkbox",
                   checked: match[0],
                   onCheckedChange: (function (checked) {
-                      console.log("File \"_RadixCheckbox.fixture.res\", line 9, characters 16-23", checked);
                       return Curry._1(setChecked, (function (param) {
                                     return checked;
                                   }));

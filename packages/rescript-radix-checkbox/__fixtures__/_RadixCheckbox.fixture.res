@@ -6,7 +6,6 @@ let default = () => {
       id="the-checkbox"
       checked={checked}
       onCheckedChange={checked => {
-        Js.log2(__LOC__, checked)
         setChecked(_ => checked)
       }}>
       <span className="flex w-4 h-4 border border-solid border-black">
