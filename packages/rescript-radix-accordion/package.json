@@ -18,11 +18,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "-": "^0.0.1",
-    "@davesnx/styled-ppx": "^0.31.3",
     "@rescript/react": "^0.10.3",
-    "bs-css": "^15.3.1",
-    "bs-css-emotion": "^4.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rescript": "^9.1.3"

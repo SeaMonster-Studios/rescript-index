@@ -10,8 +10,6 @@
   "package-specs": { "module": "es6", "in-source": true },
   "suffix": ".js",
   "bs-dependencies": ["@rescript/react"],
-  "bs-dev-dependencies": ["bs-css", "bs-css-emotion"],
-  "ppx-flags": ["@davesnx/styled-ppx/ppx"],
   "namespace": false,
   "warnings": { "error": "+101" },
   "external-stdlib": "@rescript/std"
