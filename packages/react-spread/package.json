@@ -2,7 +2,7 @@
   "name": "@seamonster-studios/react-spread",
   "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/main/packages/react-spread",
   "main": "src/ReactSpread.js",
-  "version": "1.8.3",
+  "version": "1.9.0",
   "author": "SeaMonster Studios Engineering",
   "scripts": {
     "build": "rescript build -with-deps",

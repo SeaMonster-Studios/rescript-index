@@ -2,7 +2,7 @@
   "name": "@seamonster-studios/rescript-sentry",
   "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/main/packages/rescript-sentry",
   "main": "src/Sentry.js",
-  "version": "1.8.3",
+  "version": "1.9.0",
   "private": false,
   "author": "SeaMonster Studios Engineering",
   "scripts": {
