@@ -1,0 +1,38 @@
+{
+  "name": "@seamonster-studios/rescript-radix-accordion",
+  "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/main/packages/rescript-radix-accordion",
+  "main": "src/RadixAccordion.js",
+  "version": "0.0.0",
+  "author": "SeaMonster Studios Engineering",
+  "scripts": {
+    "build": "rescript build -with-deps",
+    "clean": "rescript clean",
+    "dev": "rescript build -w",
+    "deploy": "cd ../../ && yarn deploy"
+  },
+  "keywords": [
+    "rescript"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "-": "^0.0.1",
+    "@davesnx/styled-ppx": "^0.31.3",
+    "@rescript/react": "^0.10.3",
+    "bs-css": "^15.3.1",
+    "bs-css-emotion": "^4.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rescript": "^9.1.3"
+  },
+  "dependencies": {
+    "@radix-ui/react-accordion": "^1.0.1",
+    "@rescript/std": "^9.1.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
