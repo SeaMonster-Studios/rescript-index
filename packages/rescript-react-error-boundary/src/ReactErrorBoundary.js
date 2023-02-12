@@ -6,6 +6,5 @@ var make = ErrorBoundaryJs.ErrorBoundary;
 
 export {
   make ,
-  
 }
 /* make Not a pure module */
