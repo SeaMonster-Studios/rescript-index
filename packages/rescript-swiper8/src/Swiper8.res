@@ -103,6 +103,7 @@ external make: (
   ~modules: array<swiperModule>=?,
   ~pagination: Pagination.config=?,
   ~watchSlidesProgress: bool=?,
+  ~watchOverflow: bool=?,
 ) => React.element = "Swiper"
 
 type component
