@@ -35,7 +35,7 @@ var Merseene = {};
 var Music = {};
 
 function fullName(param) {
-  return Faker.name.firstName() + " " + Faker.name.lastName();
+  return "" + Faker.name.firstName() + " " + Faker.name.lastName() + "";
 }
 
 var Name = {
@@ -72,6 +72,5 @@ export {
   System ,
   Time ,
   Vehicle ,
-  
 }
 /* faker Not a pure module */

@@ -48,12 +48,12 @@ function $$default(param) {
                       className: "bg-gray-200 px-4 py-2 rounded-md border border-gray-300",
                       type: "button",
                       onClick: (function (param) {
-                          return Curry._1(setValue, (function (prevValue) {
-                                        if (Js_option.isNone(prevValue)) {
-                                          return "item-1";
-                                        }
-                                        
-                                      }));
+                          Curry._1(setValue, (function (prevValue) {
+                                  if (Js_option.isNone(prevValue)) {
+                                    return "item-1";
+                                  }
+                                  
+                                }));
                         })
                     }, "Toggle Item 1")));
 }
@@ -61,6 +61,5 @@ function $$default(param) {
 export {
   $$default ,
   $$default as default,
-  
 }
 /* react Not a pure module */

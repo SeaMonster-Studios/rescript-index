@@ -14,6 +14,5 @@ export {
   Marker ,
   NavigationControl ,
   Popup ,
-  
 }
 /* No side effect */

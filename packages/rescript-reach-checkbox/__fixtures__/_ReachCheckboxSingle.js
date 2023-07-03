@@ -18,7 +18,7 @@ function _ReachCheckboxSingle$CheckField(Props) {
         checked: undefined,
         defaultChecked: checked,
         onChange: (function (param) {
-            return Curry._1(handleChange, ReachCheckbox.toggleChecked(checked));
+            Curry._1(handleChange, ReachCheckbox.toggleChecked(checked));
           }),
         disabled: false
       });
@@ -35,7 +35,7 @@ function _ReachCheckboxSingle$CheckField(Props) {
                     }, React.createElement("button", {
                           className: "flex w-4 h-4 border-2 border-black transition-colors duration-300 rounded-sm " + (
                             checked === "true" ? "bg-black" : "bg-transparent"
-                          ),
+                          ) + "",
                           type: "button",
                           onClick: inputProps.onChange
                         }), React.createElement(ReactSpread.make, {
@@ -63,9 +63,9 @@ function $$default(param) {
   return React.createElement(_ReachCheckboxSingle$CheckField, {
               checked: match[0],
               handleChange: (function (checked) {
-                  return Curry._1(setChecked, (function (param) {
-                                return checked;
-                              }));
+                  Curry._1(setChecked, (function (param) {
+                          return checked;
+                        }));
                 }),
               optionLabel: "Mix it up",
               label: "This is a checkbox created with Reach Checkbox hook"
@@ -77,6 +77,5 @@ export {
   CheckField ,
   $$default ,
   $$default as default,
-  
 }
 /* react Not a pure module */

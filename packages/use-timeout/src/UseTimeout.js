@@ -9,15 +9,13 @@ function use(callback, delay) {
   var savedCallback = React.useRef(callback);
   React.useEffect((function () {
           savedCallback.current = callback;
-          
         }), [callback]);
   React.useEffect((function () {
           timeoutRef.current = Caml_option.some(setTimeout(savedCallback.current, delay));
           return (function (param) {
-                    return Belt_Option.forEach(timeoutRef.current, (function (prim) {
-                                  clearTimeout(prim);
-                                  
-                                }));
+                    Belt_Option.forEach(timeoutRef.current, (function (prim) {
+                            clearTimeout(prim);
+                          }));
                   });
         }), [delay]);
   return timeoutRef;
@@ -25,6 +23,5 @@ function use(callback, delay) {
 
 export {
   use ,
-  
 }
 /* react Not a pure module */

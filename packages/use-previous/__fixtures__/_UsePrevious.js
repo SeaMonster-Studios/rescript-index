@@ -13,11 +13,10 @@ function $$default(param) {
   var previousValue = UsePrevious.use(value);
   React.useEffect((function () {
           setInterval((function (param) {
-                  return Curry._1(setValue, (function (prev) {
-                                return prev + 1 | 0;
-                              }));
+                  Curry._1(setValue, (function (prev) {
+                          return prev + 1 | 0;
+                        }));
                 }), 1000);
-          
         }), []);
   return React.createElement("div", {
               className: "p-4"
@@ -27,6 +26,5 @@ function $$default(param) {
 export {
   $$default ,
   $$default as default,
-  
 }
 /* react Not a pure module */

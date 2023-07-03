@@ -13,9 +13,9 @@ function $$default(param) {
   return React.createElement(React.Fragment, undefined, React.createElement("form", undefined, React.createElement(ReactRadioGroup.Root, {
                       value: value,
                       onValueChange: (function (value) {
-                          return Curry._1(setValue, (function (param) {
-                                        return value;
-                                      }));
+                          Curry._1(setValue, (function (param) {
+                                  return value;
+                                }));
                         }),
                       children: null,
                       id: "radix-radio-group",
@@ -53,12 +53,11 @@ function $$default(param) {
                                   })
                             }), React.createElement("label", {
                               htmlFor: "r3"
-                            }, "Compact")))), value + " selected");
+                            }, "Compact")))), "" + value + " selected");
 }
 
 export {
   $$default ,
   $$default as default,
-  
 }
 /* react Not a pure module */

@@ -1182,6 +1182,5 @@ export {
   PaginatedSet ,
   InfiniteSet ,
   Make ,
-  
 }
 /* react Not a pure module */

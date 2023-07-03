@@ -61,6 +61,5 @@ export {
   handleOnChange ,
   Mixed ,
   Custom ,
-  
 }
 /* No side effect */

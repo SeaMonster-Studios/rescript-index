@@ -14,6 +14,5 @@ export {
   Header ,
   Trigger ,
   Content ,
-  
 }
 /* No side effect */

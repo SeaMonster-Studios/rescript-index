@@ -13,9 +13,9 @@ function $$default(param) {
                   id: "the-checkbox",
                   checked: match[0],
                   onCheckedChange: (function (checked) {
-                      return Curry._1(setChecked, (function (param) {
-                                    return checked;
-                                  }));
+                      Curry._1(setChecked, (function (param) {
+                              return checked;
+                            }));
                     }),
                   children: React.createElement("span", {
                         className: "flex w-4 h-4 border border-solid border-black"
@@ -30,6 +30,5 @@ function $$default(param) {
 export {
   $$default ,
   $$default as default,
-  
 }
 /* react Not a pure module */

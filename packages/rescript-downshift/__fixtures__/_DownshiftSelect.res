@@ -41,7 +41,7 @@ let default = () => {
     <ReactSpread props={getToggleButtonProps(select)}>
       <button
         type_="button"
-        className="flex focus:bg-black hover:bg-black focus:text-white hover:text-white items-center justify-between border duration-300 w-full   border-black rounded-md px-3 py-2 transition-all">
+        className="peer flex focus:bg-black hover:bg-black focus:text-white hover:text-white items-center justify-between border duration-300 w-full   border-black rounded-md px-3 py-2 transition-all">
         <span>
           {switch select.selectedItem->Js.Nullable.toOption {
           | None => "Options"
@@ -53,7 +53,7 @@ let default = () => {
     </ReactSpread>
     <ReactSpread props={select->getMenuProps}>
       <ul
-        className="bg-white transition-opacity opacity-0 aria-expanded:opacity-100 max-h-40 overflow-y-scroll w-full mt-1 shadow-md">
+        className="bg-white transition-opacity opacity-0 peer-aria-expanded:opacity-100 max-h-40 overflow-y-scroll w-full mt-1 shadow-md">
         {switch select.isOpen {
         | false => React.null
         | true => <>

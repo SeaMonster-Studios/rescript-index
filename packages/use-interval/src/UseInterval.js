@@ -15,7 +15,7 @@ function use(callback, delay) {
         }), [callback]);
   React.useEffect((function () {
           var tick = function (param) {
-            return Curry._1(savedCallback.current, undefined);
+            Curry._1(savedCallback.current, undefined);
           };
           if (delay === undefined) {
             return (function (param) {
@@ -25,14 +25,11 @@ function use(callback, delay) {
           var id = setInterval(tick, delay);
           return (function (param) {
                     clearInterval(id);
-                    
                   });
         }), [delay]);
-  
 }
 
 export {
   use ,
-  
 }
 /* react Not a pure module */

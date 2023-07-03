@@ -27,7 +27,7 @@ function reducer(state, action) {
   var nextTime = state.time - 100 | 0;
   if (nextTime <= 0) {
     setTimeout((function (param) {
-            return Curry._1(onEnd, undefined);
+            Curry._1(onEnd, undefined);
           }), 0);
     return {
             time: 0,
@@ -43,7 +43,7 @@ function reducer(state, action) {
 
 function createInterval(fn, frequency) {
   return setInterval((function (param) {
-                return Curry._1(fn, undefined);
+                Curry._1(fn, undefined);
               }), frequency);
 }
 
@@ -59,10 +59,10 @@ function use(duration, onEnd) {
   var state = match[0];
   React.useEffect((function () {
           timerCallback.current = (function (param) {
-              return Curry._1(dispatch, {
-                          TAG: /* Decrement */1,
-                          _0: onEnd
-                        });
+              Curry._1(dispatch, {
+                    TAG: /* Decrement */1,
+                    _0: onEnd
+                  });
             });
           return (function (param) {
                     
@@ -74,7 +74,7 @@ function use(duration, onEnd) {
   React.useEffect((function () {
           var tick = function (param) {
             var current = timerCallback.current;
-            return Curry._1(current, undefined);
+            Curry._1(current, undefined);
           };
           var match = state.playState;
           var match$1 = state.time === 0;
@@ -82,7 +82,6 @@ function use(duration, onEnd) {
             var id = setInterval(tick, 100);
             return (function (param) {
                       clearInterval(id);
-                      
                     });
           }
           return (function (param) {
@@ -102,13 +101,13 @@ function use(duration, onEnd) {
         dispatch
       ]);
   var pause = React.useCallback((function (param) {
-          return Curry._1(dispatch, /* Pause */1);
+          Curry._1(dispatch, /* Pause */1);
         }), [dispatch]);
   var restart = React.useCallback((function (param) {
-          return Curry._1(dispatch, {
-                      TAG: /* Restart */0,
-                      _0: duration !== undefined ? duration : 1
-                    });
+          Curry._1(dispatch, {
+                TAG: /* Restart */0,
+                _0: duration !== undefined ? duration : 1
+              });
         }), [
         duration,
         dispatch
@@ -137,6 +136,5 @@ export {
   reducer ,
   createInterval ,
   use ,
-  
 }
 /* react Not a pure module */

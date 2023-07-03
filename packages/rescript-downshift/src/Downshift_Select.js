@@ -22,6 +22,5 @@ function Make(Config) {
 export {
   StateChangeTypes ,
   Make ,
-  
 }
 /* No side effect */

@@ -48,10 +48,9 @@ function $$default(param) {
                   "aria-controls": "swiper-example",
                   className: "inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2",
                   onClick: (function (param) {
-                      return Belt_Option.forEach(Swiper8.getFromDom(swiperRef.current), (function (prim) {
-                                    prim.slidePrev();
-                                    
-                                  }));
+                      Belt_Option.forEach(Swiper8.getFromDom(swiperRef.current), (function (prim) {
+                              prim.slidePrev();
+                            }));
                     })
                 }, "Prev"), React.createElement(React$1.Swiper, {
                   id: "swiper-example",
@@ -64,7 +63,7 @@ function $$default(param) {
                                                 tabIndex: 0
                                               }, React.createElement("div", undefined, "Active: " + (
                                                     props.isVisible ? "true" : "false"
-                                                  )), React.createElement("h2", {
+                                                  ) + ""), React.createElement("h2", {
                                                     className: "text-xl font-bold"
                                                   }, post.title), React.createElement("p", {
                                                     dangerouslySetInnerHTML: {
@@ -95,20 +94,19 @@ function $$default(param) {
                   onSlideNextTransitionEnd: (function (swiper) {
                       var visibleSlides = swiper.visibleSlides;
                       var lastVisibleSlide = Belt_Array.get(visibleSlides, visibleSlides.length - 1 | 0);
-                      return Belt_Option.forEach(lastVisibleSlide, (function (slide) {
-                                    var contentEl = slide.firstChild;
-                                    return contentEl.focus();
-                                  }));
+                      Belt_Option.forEach(lastVisibleSlide, (function (slide) {
+                              var contentEl = slide.firstChild;
+                              contentEl.focus();
+                            }));
                     }),
                   watchSlidesProgress: true
                 }), React.createElement("button", {
                   "aria-controls": "swiper-example",
                   className: "inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2",
                   onClick: (function (param) {
-                      return Belt_Option.forEach(Swiper8.getFromDom(swiperRef.current), (function (prim) {
-                                    prim.slideNext();
-                                    
-                                  }));
+                      Belt_Option.forEach(Swiper8.getFromDom(swiperRef.current), (function (prim) {
+                              prim.slideNext();
+                            }));
                     })
                 }, "Next"));
 }
@@ -117,6 +115,5 @@ export {
   posts ,
   $$default ,
   $$default as default,
-  
 }
 /*  Not a pure module */

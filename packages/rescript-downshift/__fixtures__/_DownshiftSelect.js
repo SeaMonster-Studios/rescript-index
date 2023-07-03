@@ -56,7 +56,7 @@ function $$default(param) {
                 }), React.createElement(ReactSpread.make, {
                   props: select.getToggleButtonProps(),
                   children: React.createElement("button", {
-                        className: "flex focus:bg-black hover:bg-black focus:text-white hover:text-white items-center justify-between border duration-300 w-full   border-black rounded-md px-3 py-2 transition-all",
+                        className: "peer flex focus:bg-black hover:bg-black focus:text-white hover:text-white items-center justify-between border duration-300 w-full   border-black rounded-md px-3 py-2 transition-all",
                         type: "button"
                       }, React.createElement("span", undefined, (selectedItem == null) ? "Options" : selectedItem), React.createElement(_DownshiftSelect$DownArrow, {
                             className: "ml-2 p-1 w-5 h-auto"
@@ -64,7 +64,7 @@ function $$default(param) {
                 }), React.createElement(ReactSpread.make, {
                   props: select.getMenuProps(),
                   children: React.createElement("ul", {
-                        className: "bg-white transition-opacity opacity-0 aria-expanded:opacity-100 max-h-40 overflow-y-scroll w-full mt-1 shadow-md"
+                        className: "bg-white transition-opacity opacity-0 peer-aria-expanded:opacity-100 max-h-40 overflow-y-scroll w-full mt-1 shadow-md"
                       }, select.isOpen ? React.createElement(React.Fragment, undefined, Belt_Array.mapWithIndex(items, (function (index, item) {
                                     return React.createElement(ReactSpread.make, {
                                                 props: select.getItemProps({
@@ -74,9 +74,9 @@ function $$default(param) {
                                                 children: React.createElement("li", {
                                                       className: "text-sm py-2 px-3 first:rounded-t border border-l-black border-r-black last:rounded-b hover:cursor-pointer hover:bg-black hover:text-white aria-selected:text-white aria-selected:bg-black transition-colors duration-500 " + (
                                                         Belt_Option.getWithDefault(Caml_option.nullable_to_opt(select.selectedItem), "") === item ? "bg-black text-white bg-opacity-60" : ""
-                                                      )
+                                                      ) + ""
                                                     }, item),
-                                                key: item + String(index)
+                                                key: "" + item + "" + String(index) + ""
                                               });
                                   }))) : null)
                 }));
@@ -87,6 +87,5 @@ export {
   DownArrow ,
   $$default ,
   $$default as default,
-  
 }
 /* Select Not a pure module */
