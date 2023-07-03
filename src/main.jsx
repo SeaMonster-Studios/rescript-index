@@ -1,10 +1,4 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import { mountDomRenderer } from 'react-cosmos-dom';
+import * as mountArgs from './cosmos.imports';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+mountDomRenderer(mountArgs);

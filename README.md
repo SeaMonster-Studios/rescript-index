@@ -2,9 +2,7 @@
 
 A monorepo that contains bindings and reusable components across projects. 
 
-It was instantiated using `yarn create vite` but only to provide the skeleton to
-simplify the configuration process for getting react-cosmos up and running with
-tailwindcss.
+It was instantiated using `yarn create vite` and customized using the [Custom Bundler](https://github.com/react-cosmos/react-cosmos/blob/main/docs/getting-started/custom-bundler.md#custom-bundler) instructions for react-cosmos.
 
 ## Monorepo practices
 
