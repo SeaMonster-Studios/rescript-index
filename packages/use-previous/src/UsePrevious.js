@@ -15,6 +15,5 @@ function use(value) {
 
 export {
   use ,
-  
 }
 /* react Not a pure module */

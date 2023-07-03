@@ -9,7 +9,6 @@ function useIdRef(id) {
   var ref_ = React.useRef(el);
   React.useEffect((function () {
           ref_.current = el;
-          
         }), [
         ref_,
         el
@@ -19,6 +18,5 @@ function useIdRef(id) {
 
 export {
   useIdRef ,
-  
 }
 /* react Not a pure module */

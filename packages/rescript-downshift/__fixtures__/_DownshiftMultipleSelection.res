@@ -88,14 +88,14 @@ let default = () => {
       )}>
       <button
         type_="button"
-        className="flex focus:bg-black hover:bg-black focus:text-white hover:text-white items-center justify-between border duration-300 w-full border-black rounded-md px-3 py-1 transition-all">
+        className="peer flex focus:bg-black hover:bg-black focus:text-white hover:text-white items-center justify-between border duration-300 w-full border-black rounded-md px-3 py-1 transition-all">
         <span className="leading-5 py-[6px]"> {"Options"->React.string} </span>
         <DownArrow className="ml-2 p-1 w-5 h-auto" />
       </button>
     </ReactSpread>
     <ReactSpread props={select->getMenuProps}>
       <ul
-        className="bg-white transition-opacity opacity-0 absolute z-10 aria-expanded:opacity-100 max-h-40 overflow-y-auto w-full top-full mt-1 shadow-md">
+        className="bg-white transition-opacity opacity-0 absolute z-10 peer-aria-expanded:opacity-100 max-h-40 overflow-y-auto w-full top-full mt-1 shadow-md">
         {switch select.isOpen {
         | false => React.null
         | true => <>

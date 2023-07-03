@@ -21,6 +21,5 @@ export {
   Pagination ,
   Slide ,
   getFromDom ,
-  
 }
 /* No side effect */

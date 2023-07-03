@@ -8,6 +8,5 @@ var MultipleSelection;
 export {
   Select ,
   MultipleSelection ,
-  
 }
 /* No side effect */

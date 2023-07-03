@@ -19,10 +19,10 @@
     "access": "public"
   },
   "devDependencies": {
-    "rescript": "^9.1.3"
+    "rescript": "^10.1.4"
   },
   "dependencies": {
-    "@rescript/std": "^9.1.3",
+    "@rescript/std": "^10.1.4",
     "lodash.startcase": "^4.4.0"
   }
 }

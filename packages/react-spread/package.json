@@ -18,12 +18,14 @@
     "access": "public"
   },
   "dependencies": {
-    "@rescript/react": "^0.10.3",
-    "@rescript/std": "^9.1.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "@rescript/react": "^0.11.0",
+    "@rescript/std": "^10.1.4"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "rescript": "^9.1.3"
+    "rescript": "^10.1.4"
   }
 }

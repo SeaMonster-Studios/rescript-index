@@ -116,19 +116,18 @@ function $$default(param) {
                                                 type: "button",
                                                 onClick: (function (param) {
                                                     multiSelect.removeSelectedItem(item);
-                                                    
                                                   })
                                               }, React.createElement("span", undefined, item), React.createElement(_DownshiftMultipleSelection$Close, {
                                                     className: "ml-2 w-2 h-auto"
                                                   }))),
-                                      key: String(index) + "-" + item
+                                      key: "" + String(index) + "-" + item + ""
                                     });
                         }))) : null, React.createElement(ReactSpread.make, {
                   props: select.getToggleButtonProps(multiSelect.getDropdownProps({
                             preventKeyAction: select.isOpen
                           })),
                   children: React.createElement("button", {
-                        className: "flex focus:bg-black hover:bg-black focus:text-white hover:text-white items-center justify-between border duration-300 w-full border-black rounded-md px-3 py-1 transition-all",
+                        className: "peer flex focus:bg-black hover:bg-black focus:text-white hover:text-white items-center justify-between border duration-300 w-full border-black rounded-md px-3 py-1 transition-all",
                         type: "button"
                       }, React.createElement("span", {
                             className: "leading-5 py-[6px]"
@@ -138,7 +137,7 @@ function $$default(param) {
                 }), React.createElement(ReactSpread.make, {
                   props: Curry._1(Select.getMenuProps, select),
                   children: React.createElement("ul", {
-                        className: "bg-white transition-opacity opacity-0 absolute z-10 aria-expanded:opacity-100 max-h-40 overflow-y-auto w-full top-full mt-1 shadow-md"
+                        className: "bg-white transition-opacity opacity-0 absolute z-10 peer-aria-expanded:opacity-100 max-h-40 overflow-y-auto w-full top-full mt-1 shadow-md"
                       }, select.isOpen ? React.createElement(React.Fragment, undefined, Belt_Array.mapWithIndex(items, (function (index, item) {
                                     return React.createElement(ReactSpread.make, {
                                                 props: Curry._2(Select.getItemProps, select, {
@@ -146,10 +145,10 @@ function $$default(param) {
                                                       index: index
                                                     }),
                                                 children: React.createElement("li", {
-                                                      key: item + String(index),
+                                                      key: "" + item + "" + String(index) + "",
                                                       className: "text-sm py-3 px-3 first:rounded-t border leading-4 aria-selected:text-white aria-selected:bg-black border-l-black border-r-black last:rounded-b hover:cursor-pointer hover:bg-black hover:text-white  transition-colors duration-500\n    							"
                                                     }, item),
-                                                key: item + String(index)
+                                                key: "" + item + "" + String(index) + ""
                                               });
                                   }))) : null)
                 }));
@@ -162,6 +161,5 @@ export {
   allItems ,
   $$default ,
   $$default as default,
-  
 }
 /* Select Not a pure module */

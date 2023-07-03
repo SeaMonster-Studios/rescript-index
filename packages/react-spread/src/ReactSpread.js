@@ -17,6 +17,5 @@ var make = ReactSpread;
 
 export {
   make ,
-  
 }
 /* react Not a pure module */

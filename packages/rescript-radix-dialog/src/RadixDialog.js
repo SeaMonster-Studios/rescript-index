@@ -26,6 +26,5 @@ export {
   Close ,
   Title ,
   Description ,
-  
 }
 /* No side effect */

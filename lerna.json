@@ -1,17 +1,15 @@
 {
-  "version": "1.9.6",
-  "private": false,
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "version": "independent",
   "npmClient": "yarn",
-  "useWorkspaces": true,
   "packages": [
     "packages/*"
   ],
+  "ignoreChanges": [
+    "**/*.md"
+  ],
   "command": {
     "publish": {
-      "ignoreChanges": [
-        "ignored-file",
-        "*.md"
-      ],
       "message": "chore(release): publish",
       "registry": "https://registry.npmjs.org"
     },

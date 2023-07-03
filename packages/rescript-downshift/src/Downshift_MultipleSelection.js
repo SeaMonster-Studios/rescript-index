@@ -34,13 +34,13 @@ function Make(Config) {
   var getFilteredItems = function (t, items) {
     return Belt_Array.keep(items, (function (i) {
                   return !Belt_Array.some(t.selectedItems, (function (item) {
-                                return Caml_obj.caml_equal(item, i);
+                                return Caml_obj.equal(item, i);
                               }));
                 }));
   };
   var handleStateReducer = function (callback, state, actionAndChanges) {
     var x = actionAndChanges.type;
-    if (!(Caml_obj.caml_equal(x, Downshift.useSelect.stateChangeTypes.MenuKeyDownEnter) || Caml_obj.caml_equal(x, Downshift.useSelect.stateChangeTypes.MenuKeyDownSpaceButton) || Caml_obj.caml_equal(x, Downshift.useSelect.stateChangeTypes.ItemClick) || Caml_obj.caml_equal(x, Downshift.useSelect.stateChangeTypes.ToggleButtonClick))) {
+    if (!(Caml_obj.equal(x, Downshift.useSelect.stateChangeTypes.MenuKeyDownEnter) || Caml_obj.equal(x, Downshift.useSelect.stateChangeTypes.MenuKeyDownSpaceButton) || Caml_obj.equal(x, Downshift.useSelect.stateChangeTypes.ItemClick) || Caml_obj.equal(x, Downshift.useSelect.stateChangeTypes.ToggleButtonClick))) {
       return state;
     }
     var init = actionAndChanges.changes;
@@ -67,7 +67,7 @@ function Make(Config) {
       return ;
     }
     var x = Caml_option.valFromOption(match$1);
-    if (Caml_obj.caml_equal(x, Downshift.useSelect.stateChangeTypes.MenuKeyDownEnter) || Caml_obj.caml_equal(x, Downshift.useSelect.stateChangeTypes.MenuKeyDownSpaceButton) || Caml_obj.caml_equal(x, Downshift.useSelect.stateChangeTypes.ItemClick)) {
+    if (Caml_obj.equal(x, Downshift.useSelect.stateChangeTypes.MenuKeyDownEnter) || Caml_obj.equal(x, Downshift.useSelect.stateChangeTypes.MenuKeyDownSpaceButton) || Caml_obj.equal(x, Downshift.useSelect.stateChangeTypes.ItemClick)) {
       multi.addSelectedItem(match);
       if (callback !== undefined) {
         return Curry._1(callback, undefined);
@@ -93,7 +93,7 @@ function Make(Config) {
               return handleStateReducer(stateReducer, state, changes);
             })),
       onStateChange: Belt_Option.getWithDefault(onStateChangeOverride, (function (changes) {
-              return handleOnStateChange(onStateChange, multi, changes);
+              handleOnStateChange(onStateChange, multi, changes);
             }))
     };
     if (itemToString !== undefined) {
@@ -185,6 +185,5 @@ function Make(Config) {
 
 export {
   Make ,
-  
 }
 /* downshift Not a pure module */

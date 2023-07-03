@@ -8,6 +8,5 @@ function ofTimezone(date, timezone) {
 
 export {
   ofTimezone ,
-  
 }
 /* moment-timezone Not a pure module */

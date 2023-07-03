@@ -13,7 +13,7 @@ function use(param) {
         // eslint-disable-next-line
         error.nothingHere()
       });
-                return Curry._1(makeError, error);
+                Curry._1(makeError, error);
               }), [
               error,
               match[1]
@@ -22,6 +22,5 @@ function use(param) {
 
 export {
   use ,
-  
 }
 /* react Not a pure module */

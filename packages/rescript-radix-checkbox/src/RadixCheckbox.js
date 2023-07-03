@@ -8,6 +8,5 @@ var Indicator = {};
 export {
   Root ,
   Indicator ,
-  
 }
 /* No side effect */

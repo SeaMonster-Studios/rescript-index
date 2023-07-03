@@ -1,6 +1,8 @@
 # SeaMonster Studios ReScript Index
 
-A monorepo that contains bindings and reusable components across projects
+A monorepo that contains bindings and reusable components across projects. 
+
+It was instantiated using `yarn create vite` and customized using the [Custom Bundler](https://github.com/react-cosmos/react-cosmos/blob/main/docs/getting-started/custom-bundler.md#custom-bundler) instructions for react-cosmos.
 
 ## Monorepo practices
 
@@ -79,7 +81,25 @@ Run the following scripts within the directory of the package you are developing
 
 ## Adding dependencies to a package
 
-Within on of the ./packages, run `yarn add <pkgName>` like normal, then run `lerna bootstrap`
+Within one of the ./packages, run `yarn add <pkgName>` as usual. 
+
+Pay attention to the use of `peerDependencies`. `react` and `react-dom` are
+installed as peerDependencies during `yarn run make` for react projects. 
+
+It's problematic to use multiple versions of react in a single rescript/react
+project so we leave it to the host app to declare these two deps in its own
+`dependencies` list. For example, we install react and react-dom in the root
+package.json of this monorepo to make it available to all of our packages/*
+workspaces.
+
+## Upgrading dependencies for multiple packages
+
+Use `yarn upgrade-interactive [--latest] [--pattern packagex]`
+
+or `yarn upgrade packagex@2 [--exact]`
+
+
+
 
 ## Adding other ReScript Index packages to a package
 

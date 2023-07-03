@@ -556,7 +556,7 @@ module Name = {
   @val @module("faker") @scope("name")
   external lastName: unit => string = "lastName"
 
-  let fullName = () => j`${firstName()} ${lastName()}`
+  let fullName = () => `${firstName()} ${lastName()}`
 
   @val @module("faker") @scope("name")
   external middleName: unit => string = "middleName"

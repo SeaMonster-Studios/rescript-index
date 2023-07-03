@@ -1,0 +1,7 @@
+{
+  "port": 5000,
+  "rendererUrl": "http://localhost:5050",
+  "plugins": ["react-cosmos-plugin-vite"],
+  "watchDirs": ["packages", "src"],
+  "globalImports": ["./src/index.css"]
+}

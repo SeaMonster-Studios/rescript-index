@@ -1,5 +1,0 @@
-{
-  "staticPath": "public",
-	"globalImports": ["src/index.css"],
-  "watchDirs": ["packages", "src"]
-}
