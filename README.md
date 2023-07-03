@@ -86,7 +86,7 @@ Within one of the ./packages, run `yarn add <pkgName>` as usual.
 Pay attention to the use of `peerDependencies`. `react` and `react-dom` are
 installed as peerDependencies during `yarn run make` for react projects. 
 
-It's problematic to use multiple versions of react in a single resript/react
+It's problematic to use multiple versions of react in a single rescript/react
 project so we leave it to the host app to declare these two deps in its own
 `dependencies` list. For example, we install react and react-dom in the root
 package.json of this monorepo to make it available to all of our packages/*
