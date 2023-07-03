@@ -79,7 +79,7 @@ Run the following scripts within the directory of the package you are developing
 
 ## Adding dependencies to a package
 
-Within on of the ./packages, run `yarn add <pkgName>` like normal, then run `lerna bootstrap`
+Within one of the ./packages, run `yarn add <pkgName>` as usual.
 
 ## Adding other ReScript Index packages to a package
 

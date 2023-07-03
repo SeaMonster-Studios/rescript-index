@@ -1,58 +1,53 @@
 {
-  "name": "@seamonster-studios/rescript-index",
-  "author": "SeaMonster Studios Engineering",
+  "name": "rescript-index",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
     "make": "node ./bin/make-package",
-    "dev": "cross-env FAST_REFRESH=false cosmos",
-    "build:packages": "lerna run build",
-    "build:cosmos": "FAST_REFRESH=false cosmos-export",
-    "build": "npm-run-all -s bootstrap:lerna build:packages build:cosmos",
+    "dev": "cross-env cosmos",
+    "build": "cross-env cosmos-export",
+    "build:packages": "lerna exec --concurrency 1 -- yarn build",
     "serve": "npx serve cosmos-export",
-    "bootstrap": "npm-run-all -s bootstrap:yarn bootstrap:lerna",
-    "bootstrap:yarn": "yarn",
-    "bootstrap:lerna": "lerna bootstrap --use-workspaces",
+    "bootstrap": "yarn",
     "deploy": "lerna publish",
     "clean": "npm-run-all -s clean:packages clean:cosmos",
     "clean:lerna": "lerna clean -y",
     "clean:cosmos": "rm -rf ./cosmos-export",
     "clean:root": "rm -rf ./node_modules",
     "clean:packages": "lerna run clean",
-    "reset": "npm-run-all -s clean:root bootstrap:yarn clean:lerna bootstrap:lerna"
+    "reset": "npm-run-all -s clean:lerna clean:root bootstrap",
+    "v:dev": "vite",
+    "v:build": "vite build",
+    "v:lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "v:preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "license": "MIT",
   "keywords": [
     "rescript"
   ],
   "devDependencies": {
-    "@craco/craco": "^6.1.2",
-    "autoprefixer": "^9",
-    "change-case": "^4.1.2",
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "autoprefixer": "^10.4.14",
     "cross-env": "^7.0.3",
-    "fs-extra": "^9.1.0",
-    "lerna": "^4.0.0",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
     "npm-run-all": "^4.1.5",
-    "postcss": "^7",
-    "react": "^17.0.2",
-    "react-cosmos": "^5.6.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "^4.0.3",
-    "serve": "^11.3.2",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "postcss": "^8.4.24",
+    "react-cosmos": "^6.0.0-beta.5",
+    "react-cosmos-plugin-vite": "^6.0.0-beta.5",
+    "tailwindcss": "^3.3.2",
+    "vite": "^4.3.9"
   }
 }
