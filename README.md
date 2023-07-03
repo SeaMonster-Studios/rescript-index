@@ -1,6 +1,10 @@
 # SeaMonster Studios ReScript Index
 
-A monorepo that contains bindings and reusable components across projects
+A monorepo that contains bindings and reusable components across projects. 
+
+It was instantiated using `yarn create vite` but only to provide the skeleton to
+simplify the configuration process for getting react-cosmos up and running with
+tailwindcss.
 
 ## Monorepo practices
 
