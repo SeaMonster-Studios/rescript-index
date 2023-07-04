@@ -21,12 +21,12 @@
     "rescript": "^10.1.4"
   },
   "dependencies": {
-    "@rescript/react": "^0.11.0",
     "@rescript/std": "^10.1.4",
     "@seamonster-studios/react-spread": "^2.0.0",
     "downshift": "^6.1.7"
   },
   "peerDependencies": {
+    "@rescript/react": "^0.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

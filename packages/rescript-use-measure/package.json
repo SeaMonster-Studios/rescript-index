@@ -23,11 +23,11 @@
   },
   "dependencies": {
     "@juggle/resize-observer": "^3.3.1",
-    "@rescript/react": "^0.11.0",
     "@rescript/std": "^10.1.4",
     "react-use-measure": "^2.0.4"
   },
   "peerDependencies": {
+    "@rescript/react": "^0.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

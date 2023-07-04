@@ -22,11 +22,11 @@
     "rescript": "^10.1.4"
   },
   "peerDependencies": {
+    "@rescript/react": "^0.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@rescript/react": "^0.11.0",
     "@rescript/std": "^10.1.4",
     "@seamonster-studios/rescript-react-map-gl": "^2.0.0",
     "deck.gl": "^8.4.19"
