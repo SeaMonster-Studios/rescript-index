@@ -1,1 +1,1 @@
-@module("lodash") @val external make: ('a, 'a) => bool = "isequal"
+@module("lodash.isequal") @val external make: ('a, 'a) => bool = "default"

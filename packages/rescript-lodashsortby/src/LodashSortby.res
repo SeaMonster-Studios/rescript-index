@@ -1,1 +1,1 @@
-@module("lodash") @val external make: (array<'a>, array<'a => 'b>) => array<'a> = "sortby"
+@module("lodash.sortby") @val external make: (array<'a>, array<'a => 'b>) => array<'a> = "default"

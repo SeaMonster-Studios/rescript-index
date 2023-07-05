@@ -8,8 +8,8 @@
   ],
   "scripts": {
     "make": "node ./bin/make-package",
-    "dev": "cross-env cosmos",
-    "build": "cross-env cosmos-export",
+    "dev": "cosmos",
+    "build": "cosmos-export",
     "build:packages": "lerna exec --concurrency 1 -- yarn build",
     "serve": "npx serve cosmos-export",
     "bootstrap": "yarn",

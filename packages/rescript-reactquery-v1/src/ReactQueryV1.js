@@ -2,10 +2,10 @@
 
 import * as Curry from "@rescript/std/lib/es6/curry.js";
 import * as React from "react";
-import * as Lodash from "lodash";
 import * as Caml_option from "@rescript/std/lib/es6/caml_option.js";
 import * as UsePrevious from "@seamonster-studios/use-previous/src/UsePrevious.js";
 import * as ReactQuery from "react-query";
+import LodashIsequal from "lodash.isequal";
 
 /* eslint-disable react-hooks/rules-of-hooks */
 
@@ -16,7 +16,7 @@ function useMakeReasonable(query, makeReasonable) {
       });
   var setReasonable = match[1];
   React.useEffect((function () {
-          if (!Lodash.isequal(query, prevQuery)) {
+          if (!LodashIsequal(query, prevQuery)) {
             Curry._1(setReasonable, (function (param) {
                     return Curry._1(makeReasonable, query);
                   }));
