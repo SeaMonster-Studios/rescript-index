@@ -1,2 +1,2 @@
-@module
-external make: (array<'a>, array<'a>) => array<'a> = "lodash.difference"
+@module("lodash") @val
+external make: (array<'a>, array<'a>) => array<'a> = "difference"

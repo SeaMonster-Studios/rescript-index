@@ -1,1 +1,1 @@
-@module external make: string => string = "lodash.startcase"
+@module("lodash") @val external make: string => string = "startcase"

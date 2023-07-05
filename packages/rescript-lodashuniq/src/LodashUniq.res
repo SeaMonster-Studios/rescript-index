@@ -1,1 +1,1 @@
-@module external make: array<'a> => array<'a> = "lodash.uniq"
+@module("lodash") @val external make: array<'a> => array<'a> = "uniq"
