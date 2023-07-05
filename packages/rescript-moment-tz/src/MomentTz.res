@@ -1,17 +1,17 @@
 type t
 
 /* Parse */
-@module
-external make: unit => t = "moment-timezone"
+@module("moment-timezone")
+external make: unit => t = "default"
 
-@module
-external fromString: string => t = "moment-timezone"
+@module("moment-timezone")
+external fromString: string => t = "default"
 
-@module
-external fromDate: Js.Date.t => t = "moment-timezone"
+@module("moment-timezone")
+external fromDate: Js.Date.t => t = "default"
 
-@module
-external fromFloat: float => t = "moment-timezone"
+@module("moment-timezone")
+external fromFloat: float => t = "default"
 
 @val @module("moment-timezone")
 external fromUnix: float => t = "unix"
