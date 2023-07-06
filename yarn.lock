@@ -6161,7 +6161,7 @@ react-is@^18.0.0, react-is@^18.2.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
-react-map-gl@^6.1.16:
+react-map-gl@^6.1.21:
   version "6.1.21"
   resolved "https://registry.yarnpkg.com/react-map-gl/-/react-map-gl-6.1.21.tgz#c981fb6dad951f7acd31d48d82692fc915fbf745"
   integrity sha512-7ENXxAeYaI4dhol5bir3iK6TeR9teA3MF0WH6VIhmkMRdYY3lgA4t1GzDh2BwpSO340Ngw+5mC0nTsc6gd1O4w==

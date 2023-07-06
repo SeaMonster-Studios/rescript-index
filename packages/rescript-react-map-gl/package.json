@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@rescript/std": "^10.1.4",
-    "react-map-gl": "^6.1.16"
+    "react-map-gl": "^6.1.21"
   },
   "peerDependencies": {
     "@rescript/react": "^0.11.0",
