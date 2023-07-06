@@ -2,7 +2,7 @@
   "name": "@seamonster-studios/rescript-deck-gl",
   "repository": "https://github.com/SeaMonster-Studios/rescript-index/tree/main/packages/rescript-deck-gl",
   "main": "src/DeckGl.js",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "private": false,
   "author": "SeaMonster Studios Engineering",
   "scripts": {
@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@rescript/std": "^10.1.4",
-    "@seamonster-studios/rescript-react-map-gl": "^2.0.1",
+    "@seamonster-studios/rescript-react-map-gl": "^2.0.2",
     "deck.gl": "^8.4.19"
   }
 }
