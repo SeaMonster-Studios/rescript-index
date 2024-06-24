@@ -28,7 +28,7 @@ module Slide = {
   external make: (~children: React.element) => React.element = "SwiperSlide"
 
   module WithProps = {
-    type props = {
+    type slideProps = {
       isActive: bool,
       isPrev: bool,
       isNext: bool,
@@ -36,7 +36,7 @@ module Slide = {
       isVisible: bool,
     }
     @react.component @module("swiper/react")
-    external make: (~children: props => React.element) => React.element = "SwiperSlide"
+    external make: (~children: slideProps => React.element) => React.element = "SwiperSlide"
   }
 }
 
